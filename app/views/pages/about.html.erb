@@ -1,0 +1,8 @@
+About this site
+<p>Now is <%= Time.now %></p>
+<ul>
+<% @members.each do |member| %>
+<li><%= member %></li>
+<% end %>
+</ul>
+<%= link_to "Know more about us", root_path %>
