@@ -1,0 +1,50 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top shadow">
+
+    <!-- Logo / Nome -->
+    <a class="navbar-brand" href="/">Engajobs</a>
+
+    <!-- Nav Item -->
+    <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Login / Register -->
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <%= link_to 'Entrar', root_path, class: 'btn btn-sm btn-outline-light mr-2' %>
+                <%= link_to 'Registrar', root_path, class: 'btn btn-sm btn-outline-light' %>
+            </div><!-- Nav Item - Login / Register -->
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                </a>
+
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                    aria-labelledby="userDropdown">
+                    <%= link_to root_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-user fa-md fa-fw mr-2 text-gray-600"></i>
+                        Editar Perfil Privado
+                    <% end %>
+                    <%= link_to root_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-user fa-md fa-fw mr-2 text-gray-600"></i>
+                        Editar Perfil Público
+                    <% end %>
+                    <%= link_to root_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-user fa-md fa-fw mr-2 text-gray-600"></i>
+                        Configurações
+                    <% end %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to root_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-user fa-md fa-fw mr-2 text-gray-600"></i>
+                        Sair
+                    <% end %>
+                </div><!-- Dropdown - User Information -->
+
+            </li><!-- Nav Item - User Information -->
+
+    </ul><!-- Nav Item  -->
+
+</nav><!-- Navbar -->
