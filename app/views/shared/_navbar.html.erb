@@ -1,0 +1,57 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top shadow">
+
+    <!-- Logo / Nome -->
+    <a class="navbar-brand" href="/">Engajobs</a>
+
+    <!-- Nav Item -->
+    <ul class="navbar-nav ml-auto">
+
+        <% if !(user_signed_in?) %>
+
+            <!-- Nav Item - Login / Register -->
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <%= link_to 'Entrar', new_user_session_path, class: 'btn btn-sm btn-outline-light mr-1' %>
+                <%= link_to 'Registrar', new_user_registration_path, class: 'btn btn-sm btn-outline-light' %>
+            </div><!-- Nav Item - Login / Register -->
+
+        <% else %>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-100 small"><%= current_user.email %></span>
+                    <i class="fas fa-user-check fa-md fa-fw mr-2 text-gray-100"></i>
+                </a>
+
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                    aria-labelledby="userDropdown">
+                    <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-user-secret fa-md fa-fw mr-2 text-gray-600"></i>
+                        Editar Perfil Privado
+                    <% end %>
+                    <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-address-card fa-md fa-fw mr-2 text-gray-600"></i>
+                        Editar Perfil Público
+                    <% end %>
+                    <%= link_to about_path, class: 'dropdown-item' do %>
+                        <i class="fas fa-cogs fa-md fa-fw mr-2 text-gray-600"></i>
+                        Configurações
+                    <% end %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
+                        <i class="fas fa-sign-out-alt fa-md fa-fw mr-2 text-gray-600"></i>
+                        Sair
+                    <% end %>
+                </div><!-- Dropdown - User Information -->
+
+            </li><!-- Nav Item - User Information -->
+
+        <% end %>
+        
+    </ul><!-- Nav Item  -->
+
+</nav><!-- Navbar -->
