@@ -1,5 +1,5 @@
 class AreasController < ApplicationController
-    before_action :set_area, only: [:show, :edit, :update]
+    before_action :set_area, only: [:show, :edit, :update, :destroy]
     def index
         @areas = Area.all
     end
@@ -12,7 +12,7 @@ class AreasController < ApplicationController
     end
 
     def create
-        @area = Area.new(params[:area])
+        @area = Area.new(area_params)
         if @area.save
             redirect_to area_path(@area)
         else
@@ -24,8 +24,13 @@ class AreasController < ApplicationController
     end
 
     def update
-        @area.update(params[:area])
+        @area.update(area_params)
         redirect_to area_path(@area)
+    end
+
+    def destroy
+        @area.destroy
+        redirect_to areas_path
     end
 
     private
