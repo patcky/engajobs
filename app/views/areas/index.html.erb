@@ -1,7 +1,8 @@
 <h1>Areas</h1>
 <ul>
-<% @areas.each do |area| %>
-<li> <%= link_to  area.name, area_path(area) %> </li>
-<% end %>
+    <% @areas.each do |area| %>
+        <li> <%= link_to  area.name, area_path(area) %> </li>
+    <% end %>
+</ul>
 
 <p><%= link_to "Adicionar nova área", new_area_path %></p>

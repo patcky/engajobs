@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # Routes accessible by all users:
   resources :areas, only: %i[index, show] do
-    resources :specialities, only: %i[index, show]
+    resources :specialities, only: [:show]
   end
   resources :public_profiles, shallow: true do
     resources :reviews, :favourites, :links, :profile_contacts, :profile_business_hours
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
   # Only accessible by admins:
-  resources :areas, except: %i[index, show], module: 'admin' do
+  resources :areas, except: %i[index, show], scope: 'admin' do
     resources :specialities, only: [:create, :new] 
   end
   resources :specialities, only: %i[edit, update, destroy]

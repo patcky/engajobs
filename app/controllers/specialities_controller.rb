@@ -1,8 +1,5 @@
 class SpecialitiesController < ApplicationController
     before_action :set_specialty, :set_area, only: [:show, :edit, :update, :destroy]
-    def index
-        @specialities = Speciality.all
-    end
   
     def show 
     end
