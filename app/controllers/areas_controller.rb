@@ -4,8 +4,7 @@ class AreasController < ApplicationController
         @areas = Area.all
     end
 
-    def show 
-    end
+    def show; end
 
     def new
         @area = Area.new
@@ -20,8 +19,7 @@ class AreasController < ApplicationController
         end
     end
 
-    def edit
-    end
+    def edit; end
 
     def update
         @area.update(area_params)

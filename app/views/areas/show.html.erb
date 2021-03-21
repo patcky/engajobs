@@ -4,5 +4,9 @@
         <%= link_to speciality.name, speciality_path(speciality) %>
     <% end %>
 <% else %>
-    <p><%= "This area doesn't have any specialities yet!" %></p>
+    <p><%= "Essa area ainda não possui nenhuma especialidade!" %></p>
 <% end %>
+
+<p><%= link_to 'Editar', edit_area_path(@area) %></p>
+<p><%= link_to 'Excluir', area_path(@area), method: :delete, data: { confirm: 'Tem certeza que deseja excluir essa área?' } %></p>
+<p><%= link_to 'Voltar', areas_path %></p>
