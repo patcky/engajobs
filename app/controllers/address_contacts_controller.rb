@@ -1,5 +1,5 @@
 class AddressContactsController < ApplicationController
-  before_action :set_address_contact, only: [:show, :edit, :update, :destroy]
+  before_action :set_address_contact, :set_address, only: [:show, :edit, :update, :destroy]
   def index
       @address_contacts = AddressContact.all
   end
@@ -9,10 +9,12 @@ class AddressContactsController < ApplicationController
 
   def new
       @address_contact = AddressContact.new
+      @address_contact.address = @address
   end
 
   def create
       @address_contact = AddressContact.new(address_contact_params)
+      @address_contact.address = @address
       if @address_contact.save
           redirect_to address_contact_path(@address_contact)
       else
@@ -37,6 +39,10 @@ class AddressContactsController < ApplicationController
 
   def set_address_contact
       @address_contact = AddressContact.find(params[:id])
+  end
+
+  def set_address
+    @address = Address.find(params[:address_id])
   end
 
   def address_contact_params

@@ -1,5 +1,6 @@
 class ProfileBusinessHoursController < ApplicationController
-  before_action :set_profile_business_hour, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile_business_hour, :set_public_profile, only: [:show, :edit, :update, :destroy]
+
   def index
       @profile_business_hours = ProfileBusinessHour.all
   end
@@ -9,10 +10,12 @@ class ProfileBusinessHoursController < ApplicationController
 
   def new
       @profile_business_hour = ProfileBusinessHour.new
+      @profile_business_hour.public_profile = @public_profile
   end
 
   def create
       @profile_business_hour = ProfileBusinessHour.new(profile_business_hour_params)
+      @profile_business_hour.public_profile = @public_profile
       if @profile_business_hour.save
           redirect_to profile_business_hour_path(@profile_business_hour)
       else
@@ -37,6 +40,10 @@ class ProfileBusinessHoursController < ApplicationController
 
   def set_profile_business_hour
       @profile_business_hour = ProfileBusinessHour.find(params[:id])
+  end
+
+  def set_public_profile
+    @public_profile = PublicProfile.find(params[:public_profile_id])
   end
 
   def profile_business_hour_params

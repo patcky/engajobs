@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_113425) do
+ActiveRecord::Schema.define(version: 2021_03_21_172424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_113425) do
   end
 
   create_table "address_contacts", force: :cascade do |t|
-    t.integer "type"
+    t.integer "address_contact_type"
     t.string "address_contact_value"
     t.bigint "address_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_113425) do
   end
 
   create_table "links", force: :cascade do |t|
-    t.integer "type"
+    t.integer "link_type"
     t.string "url"
     t.bigint "public_profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_113425) do
   end
 
   create_table "profile_contacts", force: :cascade do |t|
-    t.integer "type"
+    t.integer "profile_contacts_type"
     t.string "profile_contact_value"
     t.bigint "public_profile_id", null: false
     t.datetime "created_at", precision: 6, null: false

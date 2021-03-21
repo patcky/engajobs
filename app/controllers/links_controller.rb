@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, :set_public_profile, only: [:show, :edit, :update, :destroy]
+  
   def index
       @links = Link.all
   end
@@ -9,10 +10,12 @@ class LinksController < ApplicationController
 
   def new
       @link = Link.new
+      @link.public_profile = @public_profile
   end
 
   def create
       @link = Link.new(link_params)
+      @link.public_profile = @public_profile
       if @link.save
           redirect_to link_path(@link)
       else
@@ -20,8 +23,7 @@ class LinksController < ApplicationController
       end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
       @link.update(link_params)
@@ -37,6 +39,10 @@ class LinksController < ApplicationController
 
   def set_link
       @link = Link.find(params[:id])
+  end
+
+  def set_public_profile
+    @public_profile = PublicProfile.find(params[:public_profile_id])
   end
 
   def link_params

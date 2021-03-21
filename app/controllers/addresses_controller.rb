@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_address, :set_public_profile, only: [:show, :edit, :update, :destroy]
   def index
       @addresses = Address.all
   end
@@ -9,10 +9,12 @@ class AddressesController < ApplicationController
 
   def new
       @address = Address.new
+      @address.public_profile = @public_profile
   end
 
   def create
       @address = Address.new(address_params)
+      @address.public_profile = @public_profile
       if @address.save
           redirect_to address_path(@address)
       else
@@ -37,6 +39,10 @@ class AddressesController < ApplicationController
 
   def set_address
       @address = Address.find(params[:id])
+  end
+
+  def set_public_profile
+    @public_profile = PublicProfile.find(params[:public_profile_id])
   end
 
   def address_params
