@@ -1,0 +1,8 @@
+<div>
+    <%= simple_form_for [@provider_speciality, @public_profile, @speciality] do |f| %>
+        <div class="form-actions">
+            <%= f.button :submit, "Confirmar", class: "btn-green" %>
+        </div>
+    <% end %>
+    <%= link_to "Cancelar", root_path, class: "btn-red" %>
+</div>
