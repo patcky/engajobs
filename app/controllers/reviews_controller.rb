@@ -48,7 +48,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-      #params.require(:review).permit(:description)
-      #TODO: add some valuation field to reviews
+      params.require(:review).permit(:rating)
   end
 end

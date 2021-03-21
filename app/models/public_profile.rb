@@ -1,7 +1,7 @@
 class PublicProfile < ApplicationRecord
   belongs_to :user
-  has_many :favourites
-  has_many :reviews
+  has_many :favourites, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_many :provider_specialities, dependent: :destroy
   has_many :specialities, through: :provider_specialities
   has_many :areas, through: :specialities

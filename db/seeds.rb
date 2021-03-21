@@ -18,6 +18,8 @@ ProfileBusinessHour.destroy_all
 Address.destroy_all
 AddressContact.destroy_all
 AddressBusinessHour.destroy_all
+Favourite.destroy_all
+Review.destroy_all
 
 areas = Area.create([
     { name: 'Saúde' },
@@ -70,7 +72,9 @@ puts '*'*80
 p users
 
 first_user_id = User.all.first[:id]
-public_profiles = PublicProfile.create(
+last_user_id = User.all.last[:id]
+
+public_profiles = PublicProfile.create([
     { 
         name: 'Test Profile 1',
         professional_registry: 'OAB123456',
@@ -83,13 +87,29 @@ public_profiles = PublicProfile.create(
         is_pcd: false,
         is_validated: true,
         user_id: first_user_id
+    },
+    { 
+        name: 'Test Profile 2',
+        professional_registry: 'OAB123456',
+        description: 'Lore ipsum...',
+        gender: 'mulher cisgênero',
+        ethnicity: 'branca',
+        age: 30,
+        has_online_service: false,
+        has_home_service: true,
+        is_pcd: true,
+        is_validated: true,
+        user_id: last_user_id
     }
-)
+])
 puts '*'*80
 p public_profiles
 
 first_public_profile_id = PublicProfile.all.first[:id]
+last_public_profile_id = PublicProfile.all.last[:id]
+
 first_speciality_id = Speciality.all.first[:id]
+
 provider_specialities = ProviderSpeciality.create(
     { 
         speciality_id: first_speciality_id, 
@@ -240,3 +260,22 @@ address_business_hours = AddressBusinessHour.create([
 ])
 puts '*'*80
 p address_business_hours
+
+reviews = Review.create(
+    {
+        rating: 5,
+        user_id: first_user_id,
+        public_profile_id: last_public_profile_id
+    }
+)
+puts '*'*80
+p reviews
+
+favourites = Favourite.create(
+    {
+        user_id: first_user_id,
+        public_profile_id: last_public_profile_id
+    }
+)
+puts '*'*80
+p reviews
