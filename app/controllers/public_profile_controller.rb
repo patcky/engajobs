@@ -46,6 +46,18 @@ class PublicProfileController < ApplicationController
   end
 
   def public_profile_params
-    params.require(:public_profile).permit(:name)
+    params.require(:public_profile).permit(
+        name,
+        professional_registry,
+        description,
+        gender,
+        ethnicity,
+        age,
+        photo,
+        has_online_service,
+        has_home_service,
+        is_pcd,
+        is_validated
+    )
   end
 end

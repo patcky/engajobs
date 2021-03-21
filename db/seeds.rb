@@ -96,12 +96,12 @@ p provider_specialities
 
 links = Link.create([
     {
-        type: 1,
+        link_type: 1,
         url: "http://algumaurl.com",
         public_profile_id: first_public_profile_id
     },
     {
-        type: 2,
+        link_type: 2,
         url: "http://algumaurl.com",
         public_profile_id: first_public_profile_id
     }
