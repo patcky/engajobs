@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Area.destroy_all
+Speciality.destroy_all
+
 areas = Area.create([
     { name: 'Saúde' },
     { name: 'Beleza' },
@@ -21,3 +24,14 @@ areas = Area.create([
     { name: 'Arte' },
 ])
 p areas
+
+first_area_id = Area.all.first[:id]
+specialities = Speciality.create([
+    { name: 'Dermatologia', area_id: first_area_id },
+    { name: 'Cardiologia', area_id: first_area_id },
+    { name: 'Ginecologia', area_id: first_area_id },
+    { name: 'Urologia', area_id: first_area_id },
+    { name: 'Proctologia', area_id: first_area_id },
+    { name: 'Psiquiatria', area_id: first_area_id },
+])
+p specialities

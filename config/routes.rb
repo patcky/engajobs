@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: :about
 
   # Routes accessible by all users:
-  resources :areas, only: [:index, :show] do
-    resources :specialities, only: [:index, :show]
+  resources :areas, only: %i[index, show] do
+    resources :specialities, only: %i[index, show]
   end
   resources :public_profiles, shallow: true do
     resources :reviews, :favourites, :links, :profile_contacts, :profile_business_hours
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
   # Only accessible by admins:
-  resources :areas, only: [:create, :new, :edit, :update, :destroy], module: 'admin' do
+  resources :areas, except: %i[index, show], module: 'admin' do
     resources :specialities, only: [:create, :new] 
   end
   resources :specialities, only: %i[edit, update, destroy]

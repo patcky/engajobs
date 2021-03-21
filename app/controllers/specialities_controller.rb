@@ -1,5 +1,5 @@
 class SpecialitiesController < ApplicationController
-    before_action :set_specialty, only: [:show, :edit, :update, :destroy]
+    before_action :set_specialty, :set_area, only: [:show, :edit, :update, :destroy]
     def index
         @specialities = Speciality.all
     end
@@ -9,10 +9,12 @@ class SpecialitiesController < ApplicationController
   
     def new
         @speciality = Speciality.new
+        @speciality.area = @area
     end
   
     def create
         @speciality = Speciality.new(speciality_params)
+        @speciality.area = @area
         if @speciality.save
             redirect_to speciality_path(@speciality)
         else
@@ -37,6 +39,10 @@ class SpecialitiesController < ApplicationController
   
     def set_specialty
         @speciality = Speciality.find(params[:id])
+    end
+    
+    def set_area
+        @area = Area.find(params[:area_id])
     end
   
     def speciality_params
