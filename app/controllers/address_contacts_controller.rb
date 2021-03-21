@@ -46,6 +46,6 @@ class AddressContactsController < ApplicationController
   end
 
   def address_contact_params
-      params.require(:address_contact).permit(:name)
+      params.require(:address_contact).permit(:address_contact_value, :address_contact_type)
   end
 end

@@ -47,6 +47,6 @@ class ProfileBusinessHoursController < ApplicationController
   end
 
   def profile_business_hour_params
-      params.require(:profile_business_hour).permit(:name)
+      params.require(:profile_business_hour).permit(:day, :open_time, :close_time)
   end
 end

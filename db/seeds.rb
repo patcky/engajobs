@@ -13,6 +13,11 @@ User.destroy_all
 PublicProfile.destroy_all
 ProviderSpeciality.destroy_all
 Link.destroy_all
+ProfileContact.destroy_all
+ProfileBusinessHour.destroy_all
+Address.destroy_all
+AddressContact.destroy_all
+AddressBusinessHour.destroy_all
 
 areas = Area.create([
     { name: 'Saúde' },
@@ -28,7 +33,7 @@ areas = Area.create([
     { name: 'Serviços domésticos' },
     { name: 'Arte' },
 ])
-p '-'*40
+puts '*'*80
 p areas
 
 first_area_id = Area.all.first[:id]
@@ -40,7 +45,7 @@ specialities = Speciality.create([
     { name: 'Proctologia', area_id: first_area_id },
     { name: 'Psiquiatria', area_id: first_area_id },
 ])
-p '-'*40
+puts '*'*80
 p specialities
 
 users = User.create([
@@ -61,7 +66,7 @@ users = User.create([
         state: 'SP'
     }
 ])
-p '-'*40
+puts '*'*80
 p users
 
 first_user_id = User.all.first[:id]
@@ -80,7 +85,7 @@ public_profiles = PublicProfile.create(
         user_id: first_user_id
     }
 )
-p '-'*40
+puts '*'*80
 p public_profiles
 
 first_public_profile_id = PublicProfile.all.first[:id]
@@ -91,7 +96,7 @@ provider_specialities = ProviderSpeciality.create(
         public_profile_id: first_public_profile_id
     }
 )
-p '-'*40
+puts '*'*80
 p provider_specialities
 
 links = Link.create([
@@ -106,5 +111,132 @@ links = Link.create([
         public_profile_id: first_public_profile_id
     }
 ])
-p '-'*80
+puts '*'*80
 p links
+
+profile_contacts = ProfileContact.create([
+    {
+        profile_contact_type: 1,
+        profile_contact_value: "+5511999999999",
+        public_profile_id: first_public_profile_id
+    },
+    {
+        profile_contact_type: 2,
+        profile_contact_value: "email@email.com",
+        public_profile_id: first_public_profile_id
+    }
+])
+puts '*'*80
+p profile_contacts
+
+profile_business_hours = ProfileBusinessHour.create([
+    {
+        day: 1,
+        open_time: "10:00:00",
+        close_time: "18:00:00",
+        public_profile_id: first_public_profile_id
+    },
+    {
+        day: 2,
+        open_time: "10:00:00",
+        close_time: "18:00:00",
+        public_profile_id: first_public_profile_id
+    },
+    {
+        day: 3,
+        open_time: "10:00:00",
+        close_time: "18:00:00",
+        public_profile_id: first_public_profile_id
+    },
+    {
+        day: 4,
+        open_time: "10:00:00",
+        close_time: "18:00:00",
+        public_profile_id: first_public_profile_id
+    },
+    {
+        day: 5,
+        open_time: "10:00:00",
+        close_time: "18:00:00",
+        public_profile_id: first_public_profile_id
+    }
+    
+])
+puts '*'*80
+p profile_business_hours
+
+addresses = Address.create([
+    {
+        street: 'Rua José Getúlio',
+        number: '120',
+        complement: '456',
+        district: 'Liberdade',
+        city: 'São Paulo',
+        state: 'SP',
+        country: 'Brasil',
+        public_profile_id: first_public_profile_id
+    },
+    {
+        street: 'Rua Tamandaré',
+        number: '120',
+        complement: '456',
+        district: 'Liberdade',
+        city: 'São Paulo',
+        state: 'SP',
+        country: 'Brasil',
+        public_profile_id: first_public_profile_id
+    },
+])
+puts '*'*80
+p addresses
+
+first_address_id = Address.all.first[:id]
+address_contacts = AddressContact.create([
+    {
+        address_contact_type: 1,
+        address_contact_value: "+5511000000000",
+        address_id: first_address_id
+    },
+    {
+        address_contact_type: 2,
+        address_contact_value: "email2@email.com",
+        address_id: first_address_id
+    }
+])
+puts '*'*80
+p address_contacts
+
+address_business_hours = AddressBusinessHour.create([
+    {
+        day: 1,
+        open_time: "11:00:00",
+        close_time: "17:00:00",
+        address_id: first_address_id
+    },
+    {
+        day: 2,
+        open_time: "11:00:00",
+        close_time: "17:00:00",
+        address_id: first_address_id
+    },
+    {
+        day: 3,
+        open_time: "11:00:00",
+        close_time: "17:00:00",
+        address_id: first_address_id
+    },
+    {
+        day: 4,
+        open_time: "11:00:00",
+        close_time: "17:00:00",
+        address_id: first_address_id
+    },
+    {
+        day: 5,
+        open_time: "11:00:00",
+        close_time: "17:00:00",
+        address_id: first_address_id
+    }
+])
+puts '*'*80
+p address_business_hours

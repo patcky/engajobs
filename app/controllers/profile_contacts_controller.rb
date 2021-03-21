@@ -47,6 +47,6 @@ class ProfileContactsController < ApplicationController
   end
 
   def profile_contact_params
-      params.require(:profile_contact).permit(:name)
+      params.require(:profile_contact).permit(:profile_contact_value, :profile_contact_type)
   end
 end

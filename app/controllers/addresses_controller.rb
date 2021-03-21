@@ -46,6 +46,14 @@ class AddressesController < ApplicationController
   end
 
   def address_params
-      params.require(:address).permit(:name)
+      params.require(:address).permit(
+        :street,
+        :number,
+        :complement,
+        :district,
+        :city,
+        :state,
+        :country
+      )
   end
 end

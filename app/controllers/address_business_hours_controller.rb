@@ -46,6 +46,6 @@ class AddressBusinessHoursController < ApplicationController
   end
 
   def address_business_hour_params
-      params.require(:address_business_hour).permit(:name)
+      params.require(:address_business_hour).permit(:day, :open_time, :close_time)
   end
 end
