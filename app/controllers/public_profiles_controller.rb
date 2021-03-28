@@ -5,7 +5,7 @@ class PublicProfilesController < ApplicationController
   end
 
   def user_public_profiles
-    @public_profiles = allpublic_profiles.where(user: current_user)
+    @public_profiles = PublicProfile.all.where(user: current_user)
   end
 
   def show 

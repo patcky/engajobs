@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # Public pages
   root to: 'pages#home', as: :home
   get 'about', to: 'pages#about', as: :about
+  get 'user_public_profiles', to: 'public_profiles#user_public_profiles', as: :my_profiles
 
   resources :areas, shallow: true do
     resources :specialities
