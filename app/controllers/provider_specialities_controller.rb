@@ -33,7 +33,7 @@ class ProviderSpecialitiesController < ApplicationController
         @public_profile = PublicProfile.find(params[:public_profile_id])
     end
 
-    def set_specialty
+    def set_speciality
         @speciality = Speciality.find(params[:speciality])
     end
 

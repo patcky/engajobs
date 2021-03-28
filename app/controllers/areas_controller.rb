@@ -1,5 +1,5 @@
 class AreasController < ApplicationController
-    before_action :set_area, only: [:show, :edit, :update, :destroy]
+    before_action :set_area, only: [ :show, :edit, :update, :destroy]
     def index
         @areas = Area.all
     end
@@ -8,6 +8,7 @@ class AreasController < ApplicationController
 
     def new
         @area = Area.new
+        @area.specialities.build
     end
 
     def create
@@ -38,6 +39,6 @@ class AreasController < ApplicationController
     end
 
     def area_params
-        params.require(:area).permit(:name)
+        params.require(:area).permit(:name, specialities_attributes: [:id, :name])
     end
 end

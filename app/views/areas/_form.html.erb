@@ -1,4 +1,7 @@
 <%= simple_form_for @area do |f| %>
-    <%= f.input :name, "Nome" %>
+    <%= f.input :name, :label => 'Nome da área' %>
+    <%= f.simple_fields_for :specialities do |s| %>
+        <%= s.input :name, :label => 'Nome da especialidade' %>
+    <% end %>
     <%= f.submit %>
 <% end %>
