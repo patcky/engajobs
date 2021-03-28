@@ -1,4 +1,5 @@
-<%= simple_form_for @speciality do |f| %>
-    <%= f.input :name, "Nome" %>
+<%= simple_form_for [@area, @speciality] do |f| %>
+    <%= f.association :area %>
+    <%= f.input :name, :label => 'Nome' %>
     <%= f.submit %>
 <% end %>

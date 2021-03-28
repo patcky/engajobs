@@ -1,4 +1,4 @@
-class PublicProfileController < ApplicationController
+class PublicProfilesController < ApplicationController
   before_action :set_public_profile, only: [:show, :edit, :update, :destroy]
   def index
     @public_profiles = PublicProfile.all
@@ -47,17 +47,17 @@ class PublicProfileController < ApplicationController
 
   def public_profile_params
     params.require(:public_profile).permit(
-        name,
-        professional_registry,
-        description,
-        gender,
-        ethnicity,
-        age,
-        photo,
-        has_online_service,
-        has_home_service,
-        is_pcd,
-        is_validated
+        :name,
+        :professional_registry,
+        :description,
+        :gender,
+        :ethnicity,
+        :age,
+        :photo,
+        :has_online_service,
+        :has_home_service,
+        :is_pcd,
+        :is_validated
     )
   end
 end

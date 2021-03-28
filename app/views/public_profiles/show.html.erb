@@ -1,0 +1,26 @@
+
+<h1><%= @public_profile.name %></h1>
+<p><%= @public_profile.professional_registry %></p>
+<p><%= @public_profile.description %></p>
+<p><%= @public_profile.gender %></p>
+<p><%= @public_profile.ethnicity %></p>
+<p><%= @public_profile.age %></p>
+<p><%= @public_profile.photo %></p>
+<p><% if @public_profile.has_online_service %>
+        <%= 'Realiza atendimento online' %>
+    <% else %>
+        <%= 'Não realiza atendimento online' %>
+    <% end %>
+</p>
+<p><% if @public_profile.has_home_service %>
+        <%= 'Realiza atendimento domiciliar' %>
+    <% else %>
+        <%= 'Não realiza atendimento online' %>
+    <% end %>
+</p>
+<p><% if @public_profile.is_pcd %>
+        <%= 'PCD' %>
+    <% else %>
+        <%= 'Não PCD' %>
+    <% end %>
+</p>

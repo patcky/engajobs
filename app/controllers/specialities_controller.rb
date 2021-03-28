@@ -1,6 +1,7 @@
 class SpecialitiesController < ApplicationController
-    before_action :set_specialty, :set_area, only: [:show, :edit, :update, :destroy]
-  
+    before_action :set_speciality, only: [:show, :edit, :update, :destroy]
+    before_action :set_area, only: [:new, :create ]
+
     def show 
     end
   
@@ -29,12 +30,12 @@ class SpecialitiesController < ApplicationController
   
     def destroy
         @speciality.destroy
-        redirect_to specialities_path
+        redirect_to area_specialities_path
     end
   
     private
   
-    def set_specialty
+    def set_speciality
         @speciality = Speciality.find(params[:id])
     end
     

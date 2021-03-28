@@ -1,10 +1,11 @@
 <h1><%= @area.name %></h1>
 <% if @area.specialities.size > 0 %>
     <% @area.specialities.each do |speciality| %>
-        <%= link_to speciality.name, area_speciality_path(@area, speciality) %>
+        <%= link_to speciality.name, speciality_path(speciality) %>
     <% end %>
 <% else %>
     <p><%= "Essa area ainda não possui nenhuma especialidade!" %></p>
+    <%= link_to "Adicionar nova especialidade", new_area_speciality_path(@area) %>
 <% end %>
 
 <p><%= link_to 'Editar', edit_area_path(@area) %></p>
