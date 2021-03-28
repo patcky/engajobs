@@ -29,6 +29,12 @@ bundle install
 rails db:create && db:migrate && db:seed
 ```
 
+To run the server locally, just type: 
+```
+rails s
+```
+It will tell you on wich door it is running, then you go to your browser and type "localhost:3000" or whatever number is your port.
+
 ## Test
 
 Currently, we have not implemented tests yet. 
