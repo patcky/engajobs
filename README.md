@@ -26,6 +26,7 @@ After installing all dependencies, clone the repository to your PC. Then run:
 
 ```
 bundle install
+gem update --system
 bundle update
 ```
 ```
