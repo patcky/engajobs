@@ -30,7 +30,7 @@ gem update --system
 bundle update
 ```
 ```
-rails db:create && db:migrate && db:seed
+rails db:create && rails db:migrate && rails db:seed
 ```
 
 To run the server locally, just type: 
