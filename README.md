@@ -31,6 +31,7 @@ bundle update
 yarn install --check-files
 ```
 ```
+rbenv local 2.7.0
 rails db:create && rails db:migrate && rails db:seed
 ```
 
