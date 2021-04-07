@@ -25,9 +25,10 @@ If you have any trouble with installing and configuring your environment, I reco
 After installing all dependencies, clone the repository to your PC. Then run:
 
 ```
-bundle install
 gem update --system
+bundle install
 bundle update
+yarn install --check-files
 ```
 ```
 rails db:create && rails db:migrate && rails db:seed
