@@ -1,2 +1,6 @@
 <h1>Links#index</h1>
-<p>Find me in app/views/links/index.html.erb</p>
+<ul>
+    <% @links.each do |link| %>
+        <li> <%= link_to  link.link_type, link_path(link) %> </li>
+    <% end %>
+</ul>

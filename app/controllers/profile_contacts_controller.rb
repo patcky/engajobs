@@ -1,5 +1,6 @@
 class ProfileContactsController < ApplicationController
-  before_action :set_profile_contact, :set_public_profile, only: [:show, :edit, :update, :destroy]
+    before_action :set_profile_contact, only: [:show, :edit, :update, :destroy]
+    before_action :set_public_profile, only: [:new, :create ]
   
   def index
       @profile_contacts = ProfileContact.all
