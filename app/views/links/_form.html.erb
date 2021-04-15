@@ -1,0 +1,5 @@
+<%= simple_form_for [@public_profile, @link] do |f| %>
+    <%= f.input :link_type, :label => 'Tipo de link' %>
+    <%= f.input :url, :label => 'Url' %>
+    <%= f.submit %>
+<% end %>

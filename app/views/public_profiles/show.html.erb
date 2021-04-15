@@ -1,11 +1,11 @@
 
 <h1><%= @public_profile.name %></h1>
-<p><%= @public_profile.professional_registry %></p>
-<p><%= @public_profile.description %></p>
-<p><%= @public_profile.gender %></p>
-<p><%= @public_profile.ethnicity %></p>
-<p><%= @public_profile.age %></p>
-<p><%= @public_profile.photo %></p>
+<p>Registro profissional: <%= @public_profile.professional_registry %></p>
+<p>Descrição: <%= @public_profile.description %></p>
+<p>Gênero: <%= @public_profile.gender %></p>
+<p>Etnia: <%= @public_profile.ethnicity %></p>
+<p>Idade: <%= @public_profile.age %></p>
+<p>Foto: <%= @public_profile.photo %></p>
 <p><% if @public_profile.has_online_service %>
         <%= 'Realiza atendimento online' %>
     <% else %>

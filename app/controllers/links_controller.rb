@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-  before_action :set_link, :set_public_profile, only: [:show, :edit, :update, :destroy]
+    before_action :set_link, only: [:show, :edit, :update, :destroy]
+    before_action :set_public_profile, only: [:new, :create ]
   
   def index
       @links = Link.all
@@ -32,7 +33,7 @@ class LinksController < ApplicationController
 
   def destroy
       @link.destroy
-      redirect_to links_path
+      redirect_to public_profile_links
   end
 
   private
