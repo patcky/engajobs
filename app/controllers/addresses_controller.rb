@@ -1,7 +1,9 @@
 class AddressesController < ApplicationController
-  before_action :set_address, :set_public_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_public_profile, only: [:new, :create ]
+
   def index
-      @addresses = Address.all
+      @addresses = policy_scope(Address)
   end
 
   def show 
@@ -10,11 +12,13 @@ class AddressesController < ApplicationController
   def new
       @address = Address.new
       @address.public_profile = @public_profile
+      authorize @address
   end
 
   def create
       @address = Address.new(address_params)
       @address.public_profile = @public_profile
+      authorize @address
       if @address.save
           redirect_to address_path(@address)
       else
@@ -39,6 +43,7 @@ class AddressesController < ApplicationController
 
   def set_address
       @address = Address.find(params[:id])
+      authorize @address
   end
 
   def set_public_profile

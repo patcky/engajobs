@@ -1,18 +1,20 @@
 class AreasController < ApplicationController
     before_action :set_area, only: [ :show, :edit, :update, :destroy]
     def index
-        @areas = Area.all
+        @areas = policy_scope(Area)
     end
 
     def show; end
 
     def new
         @area = Area.new
+        authorize @area
         @area.specialities.build
     end
 
     def create
         @area = Area.new(area_params)
+        authorize @area
         if @area.save
             redirect_to area_path(@area)
         else
@@ -36,6 +38,7 @@ class AreasController < ApplicationController
 
     def set_area
         @area = Area.find(params[:id])
+        authorize @area
     end
 
     def area_params

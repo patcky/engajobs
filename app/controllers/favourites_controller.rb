@@ -1,19 +1,23 @@
 class FavouritesController < ApplicationController
-  before_action :set_favourite, :set_public_profile, only: [:destroy]
+    before_action :set_favourite, only: [:show, :edit, :update, :destroy]
+    before_action :set_public_profile, only: [:new, :create ]
+    
   def index
-      @favourites = Favourite.all
+      @favourites = policy_scope(Favourite)
   end
 
   def new
       @favourite = Favourite.new
       @favourite.user = current_user
       @favourite.public_profile = @public_profile
+      authorize @favourite
   end
 
   def create
       @favourite = Favourite.new
       @favourite.user = current_user
       @favourite.public_profile = @public_profile
+      authorize @favourite
       @favourite.save
       redirect_to favourite_path(@favourite)
   end
@@ -27,6 +31,7 @@ class FavouritesController < ApplicationController
 
   def set_favourite
       @favourite = Favourite.find(params[:id])
+      authorize @favourite
   end
 
   def set_public_profile

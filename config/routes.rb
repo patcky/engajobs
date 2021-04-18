@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :specialities
   end
   resources :public_profiles, shallow: true do
-    resources :reviews, :favourites, :links, :profile_contacts, :profile_business_hours
+    resources :reviews, :favourites, :links, :profile_contacts, :profile_business_hours, :provider_specialities
     resources :addresses, shallow: true do
       resources :address_business_hours
       resources :address_contacts

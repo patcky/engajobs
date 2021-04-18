@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, :set_public_profile, only: [:show, :edit, :update, :destroy]
+    before_action :set_review, only: [:show, :edit, :update, :destroy]
+    before_action :set_public_profile, only: [:new, :create ]
+    
   def index
-      @reviews = Review.all
+      @reviews = policy_scope(Review)
   end
 
   def show 
@@ -11,12 +13,14 @@ class ReviewsController < ApplicationController
       @review = Review.new
       @review.user = current_user
       @review.public_profile = @public_profile
+      authorize @review
   end
 
   def create
       @review = Review.new(review_params)
       @review.user = current_user
       @review.public_profile = @public_profile
+      authorize @review
       if @review.save
           redirect_to review_path(@review)
       else
@@ -41,6 +45,7 @@ class ReviewsController < ApplicationController
 
   def set_review
       @review = Review.find(params[:id])
+      authorize @review
   end
 
   def set_public_profile

@@ -66,6 +66,15 @@ users = User.create([
         district: 'Liberdade', 
         city: 'São Paulo', 
         state: 'SP'
+    },
+    { 
+        name: 'Test Admin', 
+        email: 'admin@admin.com',
+        password: '123456',
+        district: 'Liberdade', 
+        city: 'São Paulo', 
+        state: 'SP',
+        admin: true
     }
 ])
 puts '*'*80

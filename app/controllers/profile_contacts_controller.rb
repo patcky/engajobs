@@ -3,7 +3,7 @@ class ProfileContactsController < ApplicationController
     before_action :set_public_profile, only: [:new, :create ]
   
   def index
-      @profile_contacts = ProfileContact.all
+      @profile_contacts = policy_scope(ProfileContact)
   end
 
   def show 
@@ -12,11 +12,13 @@ class ProfileContactsController < ApplicationController
   def new
       @profile_contact = ProfileContact.new
       @profile_contact.public_profile = @public_profile
+      authorize @profile_contact
   end
 
   def create
       @profile_contact = ProfileContact.new(profile_contact_params)
       @profile_contact.public_profile = @public_profile
+      authorize @profile_contact
       if @profile_contact.save
           redirect_to profile_contact_path(@profile_contact)
       else
@@ -45,6 +47,7 @@ class ProfileContactsController < ApplicationController
 
   def set_profile_contact
       @profile_contact = ProfileContact.find(params[:id])
+      authorize @profile_contact
   end
 
   def profile_contact_params

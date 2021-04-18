@@ -5,4 +5,6 @@
     <% end %>
 </ul>
 
-<p><%= link_to "Adicionar nova área", new_area_path %></p>
+<% if policy(Area).new? %>
+    <p><%= link_to "Adicionar nova área", new_area_path %></p>
+<% end %>
