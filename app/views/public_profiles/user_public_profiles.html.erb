@@ -5,4 +5,5 @@
     <%= link_to 'Excluir', public_profile_path(profile), method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse perfil? Essa ação é irreversível' } %>
     </li>
 <% end %></ul>
-<%= link_to 'Início', home_path %>
+<p><%= link_to 'Adicionar novo perfil', new_public_profile_path %></p>
+<p><%= link_to 'Início', home_path %></p>

@@ -1,0 +1,15 @@
+<%= simple_form_for [@public_profile, @provider_speciality] do |f| %>
+    <ul>
+    <% @areas.each do |area| %>
+        <li> <%= area.name %>
+            <ul>
+            <p><% area.specialities.each do |speciality| %> 
+                <li><%= speciality.id.to_s + ': ' + speciality.name %></li>
+            <% end %></p>
+            </ul>
+        </li>
+    <% end %>
+    </ul>
+    <%= f.input :speciality_id, :label => 'Especialidade' %>
+    <%= f.submit %>
+<% end %>

@@ -8,11 +8,13 @@ class SpecialitiesController < ApplicationController
     def new
         @speciality = Speciality.new
         @speciality.area = @area
+        authorize @speciality
     end
   
     def create
         @speciality = Speciality.new(speciality_params)
         @speciality.area = @area
+        authorize @speciality
         if @speciality.save
             redirect_to speciality_path(@speciality)
         else
@@ -37,6 +39,7 @@ class SpecialitiesController < ApplicationController
   
     def set_speciality
         @speciality = Speciality.find(params[:id])
+        authorize @speciality
     end
     
     def set_area

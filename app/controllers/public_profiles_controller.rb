@@ -1,11 +1,13 @@
 class PublicProfilesController < ApplicationController
   before_action :set_public_profile, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_authorized, only: :user_public_profiles
+
   def index
-    @public_profiles = PublicProfile.all
+    @public_profiles = policy_scope(PublicProfile).order(created_at: :desc)
   end
 
   def user_public_profiles
-    @public_profiles = PublicProfile.all.where(user: current_user)
+    @public_profiles = policy_scope(PublicProfile).where(user: current_user).order(created_at: :desc)
   end
 
   def show 
@@ -13,12 +15,13 @@ class PublicProfilesController < ApplicationController
 
   def new
     @public_profile = PublicProfile.new
-    @public_profile.user = current_user
+    authorize @public_profile
   end
 
   def create
     @public_profile = PublicProfile.new(public_profile_params)
     @public_profile.user = current_user
+    authorize @public_profile
     if @public_profile.save
         redirect_to public_profile_path(@public_profile)
     else
@@ -40,9 +43,10 @@ class PublicProfilesController < ApplicationController
   end
 
   private
-
+  
   def set_public_profile
     @public_profile = PublicProfile.find(params[:id])
+    authorize @public_profile
   end
 
   def public_profile_params

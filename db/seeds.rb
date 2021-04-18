@@ -66,6 +66,15 @@ users = User.create([
         district: 'Liberdade', 
         city: 'São Paulo', 
         state: 'SP'
+    },
+    { 
+        name: 'Test Admin', 
+        email: 'admin@admin.com',
+        password: '123456',
+        district: 'Liberdade', 
+        city: 'São Paulo', 
+        state: 'SP',
+        admin: true
     }
 ])
 puts '*'*80
@@ -262,11 +271,16 @@ puts '*'*80
 p address_business_hours
 
 reviews = Review.create(
-    {
+    [{
         rating: 5,
         user_id: first_user_id,
         public_profile_id: last_public_profile_id
-    }
+    },
+    {
+        rating: 5,
+        user_id: last_user_id,
+        public_profile_id: first_public_profile_id
+    }]
 )
 puts '*'*80
 p reviews

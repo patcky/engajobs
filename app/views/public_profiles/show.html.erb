@@ -24,3 +24,90 @@
         <%= 'Não PCD' %>
     <% end %>
 </p>
+
+<h2>Especialidades:</h2>
+<ul>
+<% @public_profile.provider_specialities.each do |provider_speciality| %>
+    <li> <%= link_to  provider_speciality.speciality.name, provider_speciality_path(provider_speciality) %> </li>
+<% end %>
+</ul>
+
+<h2>Contatos:</h2>
+<ul>
+<% @public_profile.profile_contacts.each do |contact| %>
+    <li><% if contact.profile_contact_type == 1 %>
+        <%= 'Telefone: ' %>
+    <% elsif contact.profile_contact_type == 2 %>
+        <%= 'Email: ' %>
+    <% else %>
+        <%= 'Outro: ' %>
+    <% end %>
+    <%= contact.profile_contact_value %></li>
+<% end %>
+</ul>
+
+<h2>Links:</h2>
+<ul>
+<% @public_profile.links.each do |link| %>
+    <li><% if link.link_type == 1 %>
+        <%= 'Instagram: ' %>
+    <% elsif link.link_type == 2 %>
+        <%= 'Site: ' %>
+    <% else %>
+        <%= 'Outro: ' %>
+    <% end %>
+    <%= link.url %></li>
+<% end %>
+</ul>
+
+<h2>Horários de atendimento:</h2>
+<ul>
+<% days = ['Segunda', 'Terça', 'Quarta','Quinta', 'Sexta', 'Sábado', 'Domingo'] %>
+<% @public_profile.profile_business_hours.each do |day| %>
+    <li><%= days[day.day - 1] + ': ' + day.open_time.strftime('%H:%M').to_s + '-' + day.close_time.strftime('%H:%M') %></li>
+<% end %>
+</ul>
+
+<h2>Endereços:</h2>
+<ul>
+<% @public_profile.addresses.each do |address| %>
+    <div>
+        <li><%= address.street + ', ' + address.number + ', ' + address.complement + ', ' + address.district + ', ' + address.city + ', ' + address.state + ', ' + address.country + ', ' %></li>
+        <h3>Horários de atendimento neste endereço:</h3>
+        <ul>
+        <% address.address_business_hours.each do |day| %>
+            <li><%= days[day.day - 1] + ': ' + day.open_time.strftime('%H:%M').to_s + '-' + day.close_time.strftime('%H:%M') %></li>
+        <% end %>
+        </ul>
+        <h3>Contatos deste endereço:</h3>
+        <ul>
+        <% @public_profile.profile_contacts.each do |contact| %>
+            <li><% if contact.profile_contact_type == 1 %>
+                <%= 'Telefone: ' %>
+            <% elsif contact.profile_contact_type == 2 %>
+                <%= 'Email: ' %>
+            <% else %>
+                <%= 'Outro: ' %>
+            <% end %>
+            <%= contact.profile_contact_value %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
+</ul>
+
+<h2>Avaliações:</h2>
+<ul>
+<% @public_profile.reviews.each do |review| %>
+    <li><%= 'Nome: ' + review.user.name + ' - Nota: ' + review.rating.to_s %></li>
+<% end %>
+</ul>
+
+<% if policy(@public_profile).edit? %>
+    <%= link_to "Editar", edit_public_profile_path(@public_profile) %>
+<% end %>
+<% if policy(@public_profile).destroy? %>
+    <%= link_to "Excluir permanentemente", public_profile_path(@public_profile), method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse perfil? Essa ação é irreversível' } %>
+<% end %>
+
+
