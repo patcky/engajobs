@@ -2,7 +2,7 @@
 <ul>
     <% if @provider_specialities.size > 0 %>
         <% @provider_specialities.each do |provider_speciality| %>
-            <li> <%= link_to  provider_speciality.name, provider_speciality_path(provider_speciality) %> </li>
+            <li> <%= link_to  provider_speciality.speciality.name, provider_speciality_path(provider_speciality) %> </li>
         <% end %>
     <% else %>
     <p><%= "Esse perfil ainda não possui nenhuma especialidade!" %></p>
