@@ -14,8 +14,8 @@ WARNING: before anything, you need to make sure you are on an Ubuntu or MacOS ma
 
 To run this project locally, you will need to have installed:
 - Git (install and [configure an SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh), to make your life easier :) )
-- ruby (2.7.0)
-- rails (6.0.3.5) 
+- ruby (3.0.0)
+- rails (6.1.3.1) 
 - node (v14.15.0)
 - yarn (any version)
 - postgresql (any version)
@@ -26,12 +26,12 @@ After installing all dependencies, clone the repository to your PC. Then run:
 
 ```
 gem update --system
-bundle install
 bundle update
+bundle install
 yarn install --check-files
 ```
 ```
-rbenv local 2.7.0
+rbenv local 3.0.0
 rails db:create && rails db:migrate && rails db:seed
 ```
 
