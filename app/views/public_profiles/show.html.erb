@@ -64,7 +64,7 @@
 <ul>
 <% days = ['Segunda', 'Terça', 'Quarta','Quinta', 'Sexta', 'Sábado', 'Domingo'] %>
 <% @public_profile.profile_business_hours.each do |day| %>
-    <li><%= days[day.day - 1] + ': ' + day.open_time.strftime('%H:%M').to_s + '-' + day.close_time.strftime('%H:%M') %></li>
+    <li><%= days[day.day - 1] + ': ' + day.open_time.strftime('%H:%M') + '-' + day.close_time.strftime('%H:%M') %></li>
 <% end %>
 </ul>
 
@@ -76,7 +76,7 @@
         <h3>Horários de atendimento neste endereço:</h3>
         <ul>
         <% address.address_business_hours.each do |day| %>
-            <li><%= days[day.day - 1] + ': ' + day.open_time.strftime('%H:%M').to_s + '-' + day.close_time.strftime('%H:%M') %></li>
+            <li><%= days[day.day - 1] + ': ' + day.open_time.strftime('%H:%M') + '-' + day.close_time.strftime('%H:%M') %></li>
         <% end %>
         </ul>
         <h3>Contatos deste endereço:</h3>
