@@ -1,2 +1,6 @@
-<h1>AddressBusinessHours#index</h1>
-<p>Find me in app/views/address_business_hours/index.html.erb</p>
+<h1>AddressBusinessHours #index</h1>
+<ul>
+    <% @address_business_hours.each do |address_business_hour| %>
+        <li> <%= link_to  address_business_hour.day, address_business_hour_path(address_business_hour) %> </li>
+    <% end %>
+</ul>
