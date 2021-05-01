@@ -1,0 +1,5 @@
+<%= simple_form_for [@address, @address_contact] do |f| %>
+    <%= f.input :address_contact_type, :label => 'Tipo de contato' %>
+    <%= f.input :address_contact_value, :label => 'Contato' %>
+    <%= f.submit %>
+<% end %>
