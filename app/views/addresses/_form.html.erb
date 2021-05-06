@@ -1,0 +1,10 @@
+<%= simple_form_for [@public_profile, @address] do |f| %>
+    <%= f.input :street, :label => 'Rua' %>
+    <%= f.input :number, :label => 'Numero' %>
+    <%= f.input :complement, :label => 'Complemento' %>
+    <%= f.input :district, :label => 'Bairro' %>
+    <%= f.input :city, :label => 'Cidade' %>
+    <%= f.input :state, :label => 'Estado' %>
+    <%= f.input :country, priority: [ "Brasil" ], collection: [ "Argentina", "Brasil", "Chile"] %>
+    <%= f.submit %>
+<% end %>

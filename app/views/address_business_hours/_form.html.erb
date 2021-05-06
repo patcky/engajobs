@@ -1,0 +1,6 @@
+<%= simple_form_for [@address, @address_business_hour] do |f| %>
+    <%= f.input :day, :label => 'Dia da semana' %>
+    <%= f.input :open_time, :label => 'Hora inicial' %>
+    <%= f.input :close_time, :label => 'Hora final' %>
+    <%= f.submit %>
+<% end %>
