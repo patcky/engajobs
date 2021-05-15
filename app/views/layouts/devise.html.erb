@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Engajobs</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag "tailwind", media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "inter-font", media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-</head>
+  </head>
 
-<body>
-    <%= yield %>
-</body>
+  <body>
 
+    <div class="container">
+        <div class="container-devise row">
+            <%= yield %>
+        </div>
+    </div>
+
+  </body>
 </html>
