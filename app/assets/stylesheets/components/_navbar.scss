@@ -1,5 +1,4 @@
-.navbar-background {
-  justify-content: space-between;
+.navbar {
   background: $main-color;
 }
 
@@ -19,4 +18,41 @@
   color: white;
   text-decoration: none;
   text-shadow: 1px 1px darkgrey;
+}
+
+/* responsivity */
+@media (min-width: 300px) {
+  .container {
+    width: 400px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 600px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    width: 900px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .typewriter {
+    animation: animated-text 4s steps(31, end);
+    animation-iteration-count: infinite;
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    overflow: hidden;
+    position: relative;
+  }
 }
