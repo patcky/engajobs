@@ -1,26 +1,24 @@
 <div class="col-md-6">
-  <h2>Imagem</h2>
+    <h2>Imagem</h2>
 </div>
 
-<div class="col-md-6">
-  <h2 class="text-center pb-3">Log in</h2>
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
+<div class="col-md-6 d-grid gap-4">
+    <h2 class="text-center">Log in</h2>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="d-grid gap-3">
+        <%= f.input :email,
                   required: false,
                   autofocus: true,
                   input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
+        <%= f.input :password,
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class:"btn btn-secondary btn-block mb-3" %>
+        <%= f.button :submit, "Log in", class:"btn btn-secondary btn-block" %>
     </div>
-  <% end %>
+    <% end %>
 
-  <%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
 
 </div>
