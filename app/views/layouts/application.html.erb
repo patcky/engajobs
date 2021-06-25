@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html class="h-100">
+
+<head>
     <title>Engajobs</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,9 +10,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-  </head>
+</head>
 
-  <body>
+<body class="d-flex flex-column h-100">
     <%= render 'shared/flashes' %>
 
     <!-- Header -->
@@ -22,5 +23,6 @@
     <!-- Footer -->
     <%= render 'shared/footer' %>
 
-  </body>
+</body>
+
 </html>
