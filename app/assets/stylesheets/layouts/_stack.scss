@@ -1,0 +1,10 @@
+.l-stack {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
