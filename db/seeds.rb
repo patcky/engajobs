@@ -38,6 +38,37 @@ areas = Area.create([
 puts '*'*80
 p areas
 
+languages = Language.create([
+    { name: 'Português' },
+    { name: 'Libras' },
+    { name: 'Inglês' },
+    { name: 'Espanhol' },
+    { name: 'Francês' },
+    { name: 'Alemão' },
+    { name: 'Japonês' },
+    { name: 'Chinês' },
+    { name: 'Coreano' },
+    { name: 'Aparaí' }, 
+    { name: 'Bororo' }, 
+    { name: 'Caingangue' }, 
+    { name: 'Canela' }, 
+    { name: 'Carajá' }, 
+    { name: 'Caro' }, 
+    { name: 'Galibi' }, 
+    { name: 'Guarani' }, 
+    { name: 'Macu' }, 
+    { name: 'Nheengatu' }, 
+    { name: 'Pirahã' }, 
+    { name: 'Terena' }, 
+    { name: 'Tucano' }, 
+    { name: 'Tupi' }, 
+    { name: "Ye'kuana" }
+])
+puts '*'*80
+p areas
+
+portuguese_id = Language.all.first[:id]
+
 first_area_id = Area.all.first[:id]
 specialities = Speciality.create([
     { name: 'Dermatologia', area_id: first_area_id },
@@ -193,6 +224,19 @@ profile_business_hours = ProfileBusinessHour.create([
 ])
 puts '*'*80
 p profile_business_hours
+
+profile_languages = ProfileLanguage.create([
+    {
+        language_id: portuguese_id,
+        public_profile_id: last_public_profile_id
+    },
+    {
+        language_id: portuguese_id,
+        public_profile_id: first_public_profile_id
+    }
+])
+puts '*'*80
+p profile_languages
 
 addresses = Address.create([
     {

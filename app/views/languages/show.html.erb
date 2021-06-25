@@ -1,0 +1,8 @@
+<h1><%= @language.name %></h1>
+<% if policy(Language).edit? %>
+    <p><%= link_to 'Editar', edit_language_path(@language) %></p>
+<% end %>
+<% if policy(Language).destroy? %>
+    <p><%= link_to 'Excluir', language_path(@language), method: :delete, data: { confirm: 'Tem certeza que deseja excluir essa língua?' } %></p>
+<% end %>
+<p><%= link_to 'Voltar', languages_path %></p>
