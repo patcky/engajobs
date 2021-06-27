@@ -107,7 +107,7 @@
     <%= link_to "Editar", edit_public_profile_path(@public_profile) %>
 <% end %>
 <% if policy(@public_profile).destroy? %>
-    <%= link_to "Excluir permanentemente", public_profile_path(@public_profile), method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse perfil? Essa ação é irreversível' } %>
+    <%= link_to "Excluir permanentemente", root_path(@public_profile), method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse perfil? Essa ação é irreversível' } %>
 <% end %>
 
 

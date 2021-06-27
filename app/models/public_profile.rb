@@ -9,4 +9,5 @@ class PublicProfile < ApplicationRecord
   has_many :profile_contacts, dependent: :destroy
   has_many :profile_business_hours, dependent: :destroy
   has_many :addresses, dependent: :destroy
+  has_one_attached :photo
 end
