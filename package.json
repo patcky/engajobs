@@ -2,16 +2,22 @@
   "name": "_engajobs",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "@popperjs/core": "^2.9.2",
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "4.3.0",
     "bootstrap": "^5.0.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
+    "fibers": "^5.0.0",
+    "sass": "^1.35.1",
+    "vite": "^2.2.3",
+    "vite-plugin-ruby": "^2.0.2"
   }
 }

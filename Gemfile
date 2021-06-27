@@ -9,10 +9,6 @@ gem 'rails', '~> 6.1.3.1'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sassc'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.3.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -29,11 +25,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 gem 'inline_svg'
+gem 'vite_rails'
 
 group :development, :test do
   gem 'pry-byebug'
