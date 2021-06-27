@@ -1,0 +1,20 @@
+.c-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+
+  &--row {
+    flex-direction: row;
+  }
+
+  &--row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &__image {
+    width: 148px;
+    height: 115px;
+    object-fit: contain;
+  }
+}

@@ -1,7 +1,7 @@
 .l-stack {
   display: flex;
   flex-direction: column;
-  gap: $spacer;
+  gap: 1rem;
 
   & > * {
     margin-top: 0;

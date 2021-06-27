@@ -13,12 +13,20 @@
     <%= render 'shared/flashes' %>
 
     <!-- Header -->
+    <%
+=begin%>
     <%= render 'shared/navbar' %>
+    <%
+=end%>
 
     <%= yield %>
 
     <!-- Footer -->
+    <%
+=begin%>
     <%= render 'shared/footer' %>
+    <%
+=end%>
 
     <%= vite_javascript_tag 'application' %>
     <%= vite_client_tag %>

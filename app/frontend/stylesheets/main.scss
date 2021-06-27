@@ -1,4 +1,7 @@
-@import "./config";
-@import "./vendors";
+@import "./settings";
 @import "./components";
 @import "./layouts";
+
+body {
+  font-family: "Karla", sans-serif;
+}

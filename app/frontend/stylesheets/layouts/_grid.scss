@@ -4,9 +4,9 @@
   padding: 0 1rem;
   place-items: center;
 
-  @each $key, $value in $spacers {
-    &--gap-#{$key} {
-      gap: $value;
-    }
-  }
+  // @each $key, $value in $spacers {
+  //   &--gap-#{$key} {
+  //     gap: $value;
+  //   }
+  // }
 }

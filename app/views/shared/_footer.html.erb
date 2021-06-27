@@ -1,17 +1,17 @@
-<footer class="bg-primary mt-auto">
+<footer class="bg-white mt-auto">
 
     <div class="container mx-auto my-4 row">
         <!-- Image / Name -->
-        <div class="col-12 col-lg-2 mb-4">
+        <div>
             <a class="text-decoration-none link-secondary" href="/" aria-label="Engajobs">
-                <%= inline_svg_tag "logo-engajobs.svg", class: 'img', width: 60, alt: "" %>
+                <%= inline_svg_tag "logo-engajobs-horizontal.svg", class: 'img', width: 120, alt: "" %>
             </a>
         </div>
 
-        <div class="col-12 col-lg-7">
-            <div class="row">
+        <div>
+            <div>
                 <!-- Sobre serviço oferecido -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                <div>
                     <h2 class="h5">Serviço</h2>
                     <ul class="list-unstyled d-grid gap-1 mb-xl-0">
                         <li><%= link_to  "Áreas e Especialidades", areas_path, class: 'link-secondary text-decoration-none'%></li>
@@ -20,7 +20,7 @@
                 </div>
 
                 <!-- Como usar a plataforma -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                <div>
                     <h2 class="h5">Site</h2>
                     <ul class="list-unstyled d-grid gap-1 mb-xl-0">
                         <li><%= link_to  "Meus perfis públicos", my_profiles_path, class: 'link-secondary text-decoration-none'%></li>
@@ -29,7 +29,7 @@
                 </div>
 
                 <!-- Suporte -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                <div>
                     <h2 class="h5">Suporte</h2>
                     <ul class="list-unstyled d-grid gap-1 mb-lg-0">
                         <li><a href="" class="link-secondary text-decoration-none">Entre em contato</a></li>
@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- Sobre engajobs -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                <div>
                     <h2 class="h5">Engajobs</h2>
                     <ul class="list-unstyled d-grid gap-1 mb-lg-0">
                         <li><%= link_to  "Sobre nós", about_path, class: 'link-secondary text-decoration-none'%></li>
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-lg-3">
+        <div>
             <h2 class="h5">Nos siga nas redes sociais!</h2>
             <ul class="list-unstyled d-flex flex-wrap gap-3">
                 <li>
@@ -79,7 +79,7 @@
             </ul>
         </div>
 
-        <div class="col-12 text-center">
+        <div>
             <small class="text-muted">&copy;<%= Date.today.year %> Engajobs</small>
         </div>
     </div>
