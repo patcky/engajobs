@@ -9,57 +9,28 @@
     <section class="l-stack">
         <h2 class="">Nossas bandeiras</h2>
         <div class="l-stack">
-            <div class="c-card c-card--row">
+            <% @causes.each.with_index do |cause, index| -%>
+            <div class="c-card c-card--<%= index.odd? ? "row" : "row-reverse" %>">
                 <img class="c-card__image" src="" alt="" srcset="">
                 <div class="l-stack">
-                    <h3 class="">LGBTQIA+</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <h3 class=""><%= cause.name %></h3>
+                    <p><%= cause.description %></p>
                 </div>
             </div>
-            <div class="c-card c-card--row-reverse">
-                <img class="c-card__image" src="" alt="" srcset="">
-                <div class="l-stack">
-                    <h3 class="">Gênero</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                </div>
-            </div>
-            <div class="c-card c-card--row">
-                <img class="c-card__image" src="" alt="" srcset="">
-                <div class="l-stack">
-                    <h3 class="">Etnia</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                </div>
-            </div>
+            <% end -%>
         </div>
     </section>
     <div class="c-wave-separator c-wave-separator--flipped"></div>
     <section class="l-stack">
         <h2 class="">Quem nos apoia</h2>
         <ul class="l-grid">
+            <% @brands.each do |brand| -%>
             <li class="c-brand-highlight l-stack">
-                <img class="c-brand-highlight__image" src="" alt="">
-                <span class="c-brand-highlight__label">Marca</span>
+                <img class="c-brand-highlight__image" src="<%= brand.image %>" alt="<%= brand.image_alt %>">
+                <span class="c-brand-highlight__label"><%= brand.name %></span>
             </li>
-            <li class="c-brand-highlight l-stack">
-                <img class="c-brand-highlight__image" src="" alt="">
-                <span class="c-brand-highlight__label">Marca</span>
-            </li>
-            <li class="c-brand-highlight l-stack">
-                <img class="c-brand-highlight__image" src="" alt="">
-                <span class="c-brand-highlight__label">Marca</span>
-            </li>
-            <li class="c-brand-highlight l-stack">
-                <img class="c-brand-highlight__image" src="" alt="">
-                <span class="c-brand-highlight__label">Marca</span>
-            </li>
-            <li class="c-brand-highlight l-stack">
-                <img class="c-brand-highlight__image" src="" alt="">
-                <span class="c-brand-highlight__label">Marca</span>
-            </li>
-            <li class="c-brand-highlight l-stack">
-                <img class="c-brand-highlight__image" src="" alt="">
-                <span class="c-brand-highlight__label">Marca</span>
-            </li>
+            <% end -%>
+
         </ul>
         <a href="#" class="btn btn-secondary">Apoie</a>
     </section>

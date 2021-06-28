@@ -1,5 +1,7 @@
 body {
-  font-family: var(--font-content);
+  font-family: $font-content;
+  background-color: $color-background;
+  color: $color-foreground;
 }
 
 h1,

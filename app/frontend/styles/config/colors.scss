@@ -14,7 +14,7 @@ $palette-green: #adf7b6;
 $color-light: $palette-white;
 $color-dark: $palette-black;
 $color-background: $color-light;
-$color-text: $color-background;
+$color-foreground: $color-dark;
 $color-primary: $palette-orange;
 $color-primary-shade: $palette-orange-shade;
 $color-primary-text: $color-dark;
@@ -43,7 +43,7 @@ $colors: (
   'light': $color-light,
   'dark': $color-dark,
   'background': $color-background,
-  'text': $color-text,
+  'foreground': $color-foreground,
   'primary': $color-primary,
   'primary-shade': $color-primary-shade,
   'primary-text': $color-primary-text,
