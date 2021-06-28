@@ -1,0 +1,56 @@
+/* Palette colors */
+$palette-black: #000;
+$palette-white: #fff;
+$palette-gray: #eae6e6;
+$palette-orange: #ffc09f;
+$palette-orange-shade: #db8e65;
+$palette-yellow: #fcf5c7;
+$palette-yellow-shade: #ffee93;
+$palette-blue: #a0ced9;
+$palette-blue-shade: #4f668b;
+$palette-green: #adf7b6;
+
+/* Semantic colors */
+$color-light: $palette-white;
+$color-dark: $palette-black;
+$color-background: $color-light;
+$color-text: $color-background;
+$color-primary: $palette-orange;
+$color-primary-shade: $palette-orange-shade;
+$color-primary-text: $color-dark;
+$color-secondary: $palette-yellow;
+$color-secondary-shade: $palette-yellow-shade;
+$color-secondary-text: $color-dark;
+$color-highlight: $palette-blue;
+$color-highlight-shade: $palette-blue-shade;
+$color-highlight-text: $color-dark;
+
+/* Maps */
+$palette: (
+  'black': $palette-black,
+  'white': $palette-white,
+  'gray': $palette-gray,
+  'orange': $palette-orange,
+  'orange-shade': $palette-orange-shade,
+  'yellow': $palette-yellow,
+  'yellow-shade': $palette-yellow-shade,
+  'blue': $palette-blue,
+  'blue-shade': $palette-blue-shade,
+  'green': $palette-green,
+);
+
+$colors: (
+  'light': $color-light,
+  'dark': $color-dark,
+  'background': $color-background,
+  'text': $color-text,
+  'primary': $color-primary,
+  'primary-shade': $color-primary-shade,
+  'primary-text': $color-primary-text,
+  'secondary': $color-secondary,
+  'secondary-shade': $color-secondary-shade,
+  'secondary-text': $color-secondary-text,
+  'highlight': $color-highlight,
+  'highlight-shade': $color-highlight-shade,
+  'highlight-text': $color-highlight-text,
+);

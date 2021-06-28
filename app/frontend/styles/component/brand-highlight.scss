@@ -4,13 +4,13 @@
   gap: 0.75rem;
 
   &__image {
-    width: 120px;
     height: 120px;
+    width: 120px;
   }
 
   &__label {
     font-size: 14px;
-    text-transform: uppercase;
     text-align: center;
+    text-transform: uppercase;
   }
 }

@@ -1,8 +1,14 @@
 .c-card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--s-1);
   padding: 1rem 1.5rem;
+
+  &__image {
+    height: 115px;
+    object-fit: contain;
+    width: 148px;
+  }
 
   &--row {
     flex-direction: row;
@@ -10,11 +16,5 @@
 
   &--row-reverse {
     flex-direction: row-reverse;
-  }
-
-  &__image {
-    width: 148px;
-    height: 115px;
-    object-fit: contain;
   }
 }

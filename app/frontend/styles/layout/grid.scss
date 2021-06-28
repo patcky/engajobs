@@ -1,12 +1,8 @@
 .l-grid {
+  --l-grid-gap: var(--sizes-base, 1rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   padding: 0 1rem;
   place-items: center;
-
-  // @each $key, $value in $spacers {
-  //   &--gap-#{$key} {
-  //     gap: $value;
-  //   }
-  // }
+  gap: var(--grid-gap);
 }

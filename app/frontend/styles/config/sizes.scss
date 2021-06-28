@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+$ratio: 1.333;
+
+$sizes: (
+  '-5': #{math.pow($ratio, -5)}rem,
+  '-4': #{math.pow($ratio, -4)}rem,
+  '-3': #{math.pow($ratio, -3)}rem,
+  '-2': #{math.pow($ratio, -2)}rem,
+  '-1': #{math.pow($ratio, -1)}rem,
+  '0': #{math.pow($ratio, 0)}rem,
+  '1': #{math.pow($ratio, 1)}rem,
+  '2': #{math.pow($ratio, 2)}rem,
+  '3': #{math.pow($ratio, 3)}rem,
+  '4': #{math.pow($ratio, 4)}rem,
+  '5': #{math.pow($ratio, 5)}rem,
+);
