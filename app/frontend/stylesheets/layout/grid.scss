@@ -1,5 +1,5 @@
 .l-grid {
-  --l-grid-gap: var(--sizes-base, 1rem);
+  --l-grid-gap: var(--size-base, 1rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   padding: 0 1rem;

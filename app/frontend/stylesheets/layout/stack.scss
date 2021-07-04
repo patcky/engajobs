@@ -1,5 +1,5 @@
 .l-stack {
-  --l-stack-gap: var(--s0);
+  --l-stack-gap: var(--size-base);
   display: flex;
   flex-direction: column;
   gap: var(--l-stack-gap);

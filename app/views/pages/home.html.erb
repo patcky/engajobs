@@ -1,12 +1,12 @@
 <!-- Pages/home -->
 <main>
-    <section class="c-hero-banner">
+    <section class="l-stack bg-surface-light p-lg">
         <h1>Engajobs</h1>
         <p>Conectando pessoas. Abraçando diversidades.</p>
-        <%= link_to 'Cadastre-se', new_user_registration_path, class: 'btn btn-primary' %>
+        <%= link_to 'Cadastre-se', new_user_registration_path, class: 'btn btn-primary ml-auto' %>
     </section>
     <div class="c-wave-separator"></div>
-    <section class="l-stack">
+    <section class="l-stack p-lg">
         <h2 class="">Nossas bandeiras</h2>
         <div class="l-stack">
             <% @causes.each.with_index do |cause, index| -%>

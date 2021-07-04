@@ -1,0 +1,28 @@
+$ratio: 1.333;
+
+// Base
+$size-base: 1rem;
+
+// Smaller
+$size-sm: $size-base / $ratio;
+$size-xs: $size-sm / $ratio;
+$size-xxs: $size-xs / $ratio;
+
+// Bigger
+$size-md: $size-base * $ratio;
+$size-lg: $size-md * $ratio;
+$size-xl: $size-lg * $ratio;
+$size-xxl: $size-xl * $ratio;
+$size-xxxl: $size-xxl * $ratio;
+
+$sizes: (
+  "xxs": $size-xxs,
+  "xs": $size-xs,
+  "sm": $size-sm,
+  "base": $size-base,
+  "md": $size-md,
+  "xl": $size-xl,
+  "lg": $size-lg,
+  "xxl": $size-xxl,
+  "xxxl": $size-xxxl,
+);

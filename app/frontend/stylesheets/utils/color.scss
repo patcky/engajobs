@@ -1,0 +1,11 @@
+@each $name, $value in $colors {
+  /* Backgrounds */
+  .bg-#{$name} {
+    background-color: $value;
+  }
+
+  /* Font colors */
+  .color-#{$name} {
+    color: $value;
+  }
+}

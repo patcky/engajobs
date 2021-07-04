@@ -1,12 +1,12 @@
-@import '../config/sizes';
-@import '../config/colors';
-@import '../config/fonts';
+@import "../config/sizes";
+@import "../config/colors";
+@import "../config/fonts";
 
 /* Global variables */
 :root {
   /* Sizes */
   @each $name, $value in $sizes {
-    --s-#{$name}: #{$value};
+    --size-#{$name}: #{$value};
   }
 
   /* Colors */
