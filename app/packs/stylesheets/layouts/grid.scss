@@ -1,0 +1,9 @@
+@use '../helpers/tokens.scss';
+
+.l-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  padding: tokens.get("sizes", "none");
+  row-gap: tokens.get("sizes", 600);
+  column-gap: tokens.get("sizes", 200);
+}

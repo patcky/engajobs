@@ -1,0 +1,29 @@
+@use "sass:meta";
+@use "sass:map";
+@use '../config/breakpoints';
+
+@mixin create($name, $property, $entries, $responsive: true) {
+  @each $entry, $value in $entries {
+    .#{$name}-#{$entry} {
+      #{$property}: #{$value};
+    }
+  }
+
+  @each $breakpoint, $breakpointValue in breakpoints.$map {
+    $prefixed-name: #{$breakpoint + "\\:"+ $name};
+
+    @media (min-width: $breakpointValue) {
+      @each $entry, $value in $entries {
+        .#{$name}-#{$entry} {
+          #{$property}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+@mixin create-variants($entries, $variants, $responsive: true) {
+  @each $variant, $property in $variants {
+    @include create($variant, $property, $entries, $responsive);
+  }
+}

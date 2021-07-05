@@ -1,0 +1,18 @@
+@use '../helpers/tokens.scss';
+
+:root {
+  // Generate tokens variables
+  @include tokens.create-vars();
+}
+
+body {
+  font-family: tokens.get("fonts", "content");
+  background-color: tokens.get("colors", "white");
+  color: tokens.get("colors", "black");
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  font-family: tokens.get("fonts", "display");
+}

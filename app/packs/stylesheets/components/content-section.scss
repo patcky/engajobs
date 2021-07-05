@@ -1,0 +1,7 @@
+@use '../layouts/stack.scss';
+
+.c-content-section {
+  @extend .l-stack;
+  padding: var(--sizes-600) var(--sizes-400);
+  gap: var(--sizes-800);
+}

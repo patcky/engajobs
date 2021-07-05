@@ -1,7 +1,7 @@
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
+// a relevant structure within app/packs and only use these pack files to reference
 // that code so it'll be compiled.
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
@@ -14,4 +14,9 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log("test");
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
+import "../stylesheets/application.scss";
+
+console.log("Hello World from Webpacker");

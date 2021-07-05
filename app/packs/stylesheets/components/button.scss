@@ -1,0 +1,32 @@
+@use '../helpers/tokens.scss';
+
+.c-button {
+  --c-button-color-background: #{tokens.get("colors", "white")};
+  --c-button-color-hover: #{tokens.get("colors", "gray")};
+  --c-button-color-text: #{tokens.get("colors", "black")};
+  --c-button-color-border: #{tokens.get("colors", "mid-gray")};
+  --c-button-padding: #{tokens.get("sizes", 200) tokens.get("sizes", 400)};
+  --c-button-border-radius: #{tokens.get("sizes", 400)};
+
+  appearance: none;
+  cursor: pointer;
+  background-color: var(--c-button-color-background);
+  color: var(--c-button-color-text);
+  text-decoration: none;
+  padding: var(--c-button-padding);
+  border: 1px solid var(--c-button-color-border);
+  border-radius: var(--c-button-border-radius);
+  min-width: 16ch;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--c-button-color-hover);
+  }
+
+  &--primary {
+    --c-button-color-background: #{tokens.get("colors", "orange")};
+    --c-button-color-hover: #{tokens.get("colors", "orange-shade")};
+    --c-button-color-text: #{tokens.get("colors", "black")};
+    --c-button-color-border: #{tokens.get("colors", "orange-shade")};
+  }
+}

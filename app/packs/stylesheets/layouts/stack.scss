@@ -1,8 +1,9 @@
+@use '../helpers/tokens.scss';
+
 .l-stack {
-  --l-stack-gap: var(--size-base);
   display: flex;
   flex-direction: column;
-  gap: var(--l-stack-gap);
+  gap: tokens.get("sizes", 400);
 
   & > * {
     margin-top: 0;

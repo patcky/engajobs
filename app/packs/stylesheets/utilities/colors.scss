@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '../helpers/tokens';
+
+@include tokens.create-utilities(
+  "colors",
+  (
+    bg: "background",
+    color: "color",
+  ),
+  true
+);

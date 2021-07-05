@@ -1,28 +1,29 @@
 <!-- Pages/home -->
 <main>
-    <section class="l-stack bg-surface-light p-lg">
+    <section class="c-content-section gap-400 bg-gray">
         <h1>Engajobs</h1>
         <p>Conectando pessoas. Abraçando diversidades.</p>
-        <%= link_to 'Cadastre-se', new_user_registration_path, class: 'btn btn-primary ml-auto' %>
+        <%= link_to 'Cadastre-se', new_user_registration_path, class: 'c-button c-button--primary ml-auto' %>
     </section>
     <div class="c-wave-separator"></div>
-    <section class="l-stack p-lg">
-        <h2 class="">Nossas bandeiras</h2>
-        <div class="l-stack">
+    <section class="c-content-section">
+        <h2>Nossas bandeiras</h2>
+        <div class="l-stack gap-800">
             <% @causes.each.with_index do |cause, index| -%>
-            <div class="c-card c-card--<%= index.odd? ? "row" : "row-reverse" %>">
-                <img class="c-card__image" src="" alt="" srcset="">
-                <div class="l-stack">
-                    <h3 class=""><%= cause.name %></h3>
-                    <p><%= cause.description %></p>
-                </div>
+            <div class="c-card <%= index.odd? ? "c-card--flip" : "" %>">
+                <img class="c-card__image" src="<%= cause.image %>"" alt="" srcset="">
+                <div class=" l-stack">
+                <h3><%= cause.name %></h3>
+                <p><%= cause.description %></p>
             </div>
-            <% end -%>
+        </div>
+        <% end -%>
         </div>
     </section>
-    <div class="c-wave-separator c-wave-separator--flipped"></div>
-    <section class="l-stack">
-        <h2 class="">Quem nos apoia</h2>
+    <div class="c-wave-separator--flipped"></div>
+
+    <section class="c-content-section bg-gray">
+        <h2>Quem nos apoia</h2>
         <ul class="l-grid">
             <% @brands.each do |brand| -%>
             <li class="c-brand-highlight l-stack">
@@ -32,10 +33,10 @@
             <% end -%>
 
         </ul>
-        <a href="#" class="btn btn-secondary">Apoie</a>
+        <a href="#" class="c-button c-button--primary m-auto">Apoie</a>
     </section>
-    <section class="l-stack">
-        <h2 class="">Entenda a causa</h2>
+    <section class="c-content-section bg-gray pt-none">
+        <h2>Entenda a causa</h2>
         <div class="stack">
             <div>
                 <div class="media"></div>
@@ -49,4 +50,5 @@
             </div>
         </div>
     </section>
+
 </main>

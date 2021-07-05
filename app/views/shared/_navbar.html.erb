@@ -1,22 +1,18 @@
 <!-- Navbar -->
-<nav class="navbar navbar-light bg-primary navbar-expand sticky-top shadow">
-
-    <div class="container-fluid mx-auto">
+<nav class="bg-orange color-black">
+    <div class="wrapper c-card p-200">
         <!-- Logo / Nome -->
+        <%= inline_svg_tag "logo-engajobs.svg", class: 'img', width: 40 %>
 
-        <a class="navbar-brand" href="/">
-            <%= inline_svg_tag "logo-engajobs.svg", class: 'img', width: 40 %>
-        </a>
 
         <!-- Nav Item -->
-        <ul class="navbar-nav ms-auto">
-
+        <ul class="ml-auto">
             <% if !(user_signed_in?) %>
 
             <!-- Nav Item - Login / Register -->
-            <div class="d-sm-flex align-items-center justify-content-between">
-                <%= link_to 'Entrar', new_user_session_path, class: 'btn btn-sm btn-outline-light me-1' %>
-                <%= link_to 'Registrar', new_user_registration_path, class: 'btn btn-sm btn-outline-light' %>
+            <div>
+                <%= link_to 'Entrar', new_user_session_path, class: 'c-button c-button--primary btn-outline-light me-1' %>
+                <%= link_to 'Registrar', new_user_registration_path, class: 'c-button c-button--primary btn-outline-light' %>
             </div><!-- Nav Item - Login / Register -->
 
             <% else %>

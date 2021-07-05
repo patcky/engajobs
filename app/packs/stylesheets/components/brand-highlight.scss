@@ -1,11 +1,14 @@
+@use '../helpers/tokens.scss';
+
 .c-brand-highlight {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: tokens.get("sizes", 200);
 
   &__image {
-    height: 120px;
-    width: 120px;
+    width: 100%;
+    aspect-ratio: 1;
   }
 
   &__label {

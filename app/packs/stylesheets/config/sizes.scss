@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+$ratio: 1.333;
+
+$map: (
+  "none": 0,
+  "100": #{math.pow($ratio, -3)}rem,
+  "200": #{math.pow($ratio, -2)}rem,
+  "300": #{math.pow($ratio, -1)}rem,
+  "400": #{math.pow($ratio, 0)}rem,
+  "500": #{math.pow($ratio, 1)}rem,
+  "600": #{math.pow($ratio, 2)}rem,
+  "700": #{math.pow($ratio, 3)}rem,
+  "800": #{math.pow($ratio, 4)}rem,
+  "900": #{math.pow($ratio, 5)}rem,
+);
