@@ -1,7 +1,14 @@
-@use '../layouts/stack.scss';
+@use '../layouts/stack';
+@use '../helpers/tokens';
+@use '../utilities/spacing';
+@use '../utilities/layout';
 
 .c-content-section {
-  @extend .l-stack;
-  padding: var(--sizes-600) var(--sizes-400);
-  gap: var(--sizes-800);
+  @extend .py-500;
+  @extend .lg\:py-800;
+
+  &__container {
+    @extend .l-stack;
+    @extend .container;
+  }
 }

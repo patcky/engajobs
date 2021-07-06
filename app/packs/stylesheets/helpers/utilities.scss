@@ -14,7 +14,7 @@
 
     @media (min-width: $breakpointValue) {
       @each $entry, $value in $entries {
-        .#{$name}-#{$entry} {
+        .#{$prefixed-name}-#{$entry} {
           #{$property}: #{$value};
         }
       }

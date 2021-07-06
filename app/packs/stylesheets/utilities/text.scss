@@ -1,0 +1,10 @@
+@use '../helpers/utilities';
+@use '../helpers/tokens';
+
+@include tokens.create-utilities(
+  "sizes",
+  (
+    "text": font-size,
+    "weight": font-weight,
+  )
+);

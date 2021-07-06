@@ -1,6 +1,6 @@
 <footer class="c-content-section bg-primary mt-auto">
 
-    <div class="container mx-auto my-4 row">
+    <div class="container l-stack gap-500">
         <!-- Image / Name -->
         <div>
             <a class="text-decoration-none link-secondary" href="/" aria-label="Engajobs">
@@ -8,49 +8,44 @@
             </a>
         </div>
 
-        <div>
-            <div>
-                <!-- Sobre serviço oferecido -->
-                <div>
-                    <h2 class="h5">Serviço</h2>
-                    <ul class="pl-none" role="list">
-                        <li><%= link_to  "Áreas e Especialidades", areas_path, class: ''%></li>
-                        <li><%= link_to  "Contatos de profissionais", public_profiles_path, class: ''%></li>
-                    </ul>
-                </div>
 
-                <!-- Como usar a plataforma -->
-                <div>
-                    <h2 class="h5">Site</h2>
-                    <ul class="pl-none" role="list">
-                        <li><%= link_to  "Meus perfis públicos", my_profiles_path, class: ''%></li>
-                        <li><a href="" class="">Favoritos</a></li>
-                    </ul>
-                </div>
-
-                <!-- Suporte -->
-                <div>
-                    <h2 class="h5">Suporte</h2>
-                    <ul class="pl-none" role="list">
-                        <li><a href="" class="">Entre em contato</a></li>
-                        <li><a href="" class="">Redes sociais</a></li>
-                    </ul>
-                </div>
-
-                <!-- Sobre engajobs -->
-                <div>
-                    <h2 class="h5">Engajobs</h2>
-                    <ul class="pl-none" role="list">
-                        <li><%= link_to  "Sobre nós", about_path, class: ''%></li>
-                        <li><a href="" class="">Impacto Social</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="l-stack gap-100">
+            <h2 class="h5">Serviço</h2>
+            <ul class="pl-none l-stack gap-none" role="list">
+                <li><%= link_to  "Áreas e Especialidades", areas_path, class: ''%></li>
+                <li><%= link_to  "Contatos de profissionais", public_profiles_path, class: ''%></li>
+            </ul>
         </div>
 
-        <div>
+        <div class="l-stack gap-100">
+            <h2 class="h5">Site</h2>
+            <ul class="pl-none l-stack gap-none" role="list">
+                <li><%= link_to  "Meus perfis públicos", my_profiles_path, class: ''%></li>
+                <li><a href="" class="">Favoritos</a></li>
+            </ul>
+        </div>
+
+        <div class="l-stack gap-100">
+            <h2 class="h5">Suporte</h2>
+            <ul class="pl-none l-stack gap-none" role="list">
+                <li><a href="" class="">Entre em contato</a></li>
+                <li><a href="" class="">Redes sociais</a></li>
+            </ul>
+        </div>
+
+        <!-- Sobre engajobs -->
+        <div class="l-stack gap-100">
+            <h2 class="h5">Engajobs</h2>
+            <ul class="pl-none l-stack gap-none" role="list">
+                <li><%= link_to  "Sobre nós", about_path, class: ''%></li>
+                <li><a href="" class="">Impacto Social</a></li>
+            </ul>
+        </div>
+
+
+        <div class="l-stack gap-100">
             <h2 class="h5">Nos siga nas redes sociais!</h2>
-            <ul class="pl-none m-none gap-300" role="list">
+            <ul class="pl-none c-card gap-200 m-none" role="list">
                 <li>
                     <a href="https://twitter.com">
                         <%= inline_svg_tag "logo-twitter.svg", class: "d-block", height: 18, alt: "" %>

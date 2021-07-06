@@ -1,30 +1,40 @@
 @use '../helpers/utilities';
 @use '../helpers/tokens';
 
-$size-utilities: (
-  p: "padding",
-  pt: "padding-top",
-  pb: "padding-bottom",
-  pl: "padding-left",
-  pr: "padding-right",
-  "gap": gap,
-  "gap-row": row-gap,
-  "gap-column": column-gap,
+@include tokens.create-utilities(
+  "sizes",
+  (
+    p: "padding",
+    pt: "padding-top",
+    pb: "padding-bottom",
+    pl: "padding-left",
+    pr: "padding-right",
+    px: "padding-inline",
+    py: "padding-block",
+  )
 );
-
-@include tokens.create-utilities("sizes", $size-utilities);
 
 $margins: (
   auto: auto,
   none: 0,
 );
 
-$margins-variants: (
-  m: "margin",
-  mt: "margin-top",
-  mb: "margin-bottom",
-  ml: "margin-left",
-  mr: "margin-right",
+@include utilities.create-variants(
+  $margins,
+  (
+    m: "margin",
+    mt: "margin-top",
+    mb: "margin-bottom",
+    ml: "margin-left",
+    mr: "margin-right",
+  )
 );
 
-@include utilities.create-variants($margins, $margins-variants);
+@include tokens.create-utilities(
+  "sizes",
+  (
+    "gap": gap,
+    "gap-row": row-gap,
+    "gap-column": column-gap,
+  )
+);

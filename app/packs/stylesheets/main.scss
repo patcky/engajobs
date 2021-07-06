@@ -9,13 +9,15 @@
 @use "layouts/grid";
 @use "layouts/stack";
 
+// Utilities
+@use "utilities/spacing";
+@use "utilities/colors";
+@use "utilities/text";
+@use "utilities/layout";
+
 // Components
 @use "components/alert";
 @use "components/brand-highlight";
 @use "components/button";
 @use "components/card";
 @use "components/content-section";
-
-// Utilities
-@use "utilities/spacing";
-@use "utilities/colors";
