@@ -1,17 +1,12 @@
-@use '../helpers/tokens.scss';
-
-:root {
-  // Generate tokens variables
-  @include tokens.create-vars();
-}
+@use '../helpers';
 
 body {
-  font-family: tokens.get("fonts", "content");
-  background-color: tokens.get("colors", "white");
-  color: tokens.get("colors", "black");
+  font-family: helpers.get-var("font", "content");
+  background-color: helpers.get-var("color", "white");
+  color: helpers.get-var("color", "black");
 }
 
 h1,
 h2 {
-  font-family: tokens.get("fonts", "display");
+  font-family: helpers.get-var("font", "display");
 }

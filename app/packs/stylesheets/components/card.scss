@@ -1,9 +1,9 @@
-@use '../helpers/tokens.scss';
+@use '../helpers';
 
 .c-card {
   display: flex;
   flex-direction: row;
-  gap: tokens.get("sizes", "500");
+  gap: helpers.get-var("sizes", "500");
 
   &__image {
     height: 115px;

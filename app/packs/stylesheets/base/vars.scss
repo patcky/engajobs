@@ -1,0 +1,13 @@
+@use '../helpers';
+@use '../config';
+
+:root {
+  // Generate CSS variables from configs
+  @include helpers.create-vars("bp-width", config.$breakpoints);
+  @include helpers.create-vars("color", config.$colors);
+  @include helpers.create-vars("font", config.$fonts);
+  @include helpers.create-vars("font-size", config.$font-sizes);
+  @include helpers.create-vars("line-height", config.$line-heights);
+  @include helpers.create-vars("font-weight", config.$font-weights);
+  @include helpers.create-vars("spacing", config.$spacing);
+}

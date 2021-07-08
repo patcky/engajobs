@@ -1,11 +1,10 @@
 @use '../layouts/stack';
-@use '../helpers/tokens';
+@use '../helpers';
 @use '../utilities/spacing';
 @use '../utilities/layout';
 
 .c-content-section {
-  @extend .py-500;
-  @extend .lg\:py-800;
+  @extend .py-2;
 
   &__container {
     @extend .l-stack;

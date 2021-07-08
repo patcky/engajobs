@@ -1,10 +1,10 @@
-@use '../helpers/tokens.scss';
+@use '../helpers';
 
 .c-brand-highlight {
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: tokens.get("sizes", 200);
+  gap: helpers.get-var("sizes", 200);
 
   &__image {
     width: 100%;

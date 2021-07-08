@@ -1,12 +1,13 @@
-@use '../helpers/tokens.scss';
+@use '../helpers';
 
 .c-button {
-  --c-button-color-background: #{tokens.get("colors", "white")};
-  --c-button-color-hover: #{tokens.get("colors", "gray")};
-  --c-button-color-text: #{tokens.get("colors", "black")};
-  --c-button-color-border: #{tokens.get("colors", "mid-gray")};
-  --c-button-padding: #{tokens.get("sizes", 200) tokens.get("sizes", 400)};
-  --c-button-border-radius: #{tokens.get("sizes", 400)};
+  --c-button-color-background: #{helpers.get-var("colors", "white")};
+  --c-button-color-hover: #{helpers.get-var("colors", "gray")};
+  --c-button-color-text: #{helpers.get-var("colors", "black")};
+  --c-button-color-border: #{helpers.get-var("colors", "mid-gray")};
+  --c-button-padding: #{helpers.get-var("sizes", 200)
+    helpers.get-var("sizes", 400)};
+  --c-button-border-radius: #{helpers.get-var("sizes", 400)};
 
   appearance: none;
   cursor: pointer;
@@ -24,9 +25,9 @@
   }
 
   &--primary {
-    --c-button-color-background: #{tokens.get("colors", "orange")};
-    --c-button-color-hover: #{tokens.get("colors", "orange-shade")};
-    --c-button-color-text: #{tokens.get("colors", "black")};
-    --c-button-color-border: #{tokens.get("colors", "orange-shade")};
+    --c-button-color-background: #{helpers.get-var("colors", "orange")};
+    --c-button-color-hover: #{helpers.get-var("colors", "orange-shade")};
+    --c-button-color-text: #{helpers.get-var("colors", "black")};
+    --c-button-color-border: #{helpers.get-var("colors", "orange-shade")};
   }
 }

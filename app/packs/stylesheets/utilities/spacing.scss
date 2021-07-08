@@ -1,40 +1,58 @@
-@use '../helpers/utilities';
-@use '../helpers/tokens';
-
-@include tokens.create-utilities(
-  "sizes",
-  (
-    p: "padding",
-    pt: "padding-top",
-    pb: "padding-bottom",
-    pl: "padding-left",
-    pr: "padding-right",
-    px: "padding-inline",
-    py: "padding-block",
-  )
-);
+@use 'sass:map';
+@use '../config';
+@use '../helpers';
 
 $margins: (
-  auto: auto,
-  none: 0,
+  m: "margin",
+  mt: "margin-top",
+  mb: "margin-bottom",
+  ml: "margin-left",
+  mr: "margin-right",
+  mx: "margin-inline",
+  my: "margin-block",
 );
 
-@include utilities.create-variants(
-  $margins,
-  (
-    m: "margin",
-    mt: "margin-top",
-    mb: "margin-bottom",
-    ml: "margin-left",
-    mr: "margin-right",
-  )
+$paddings: (
+  p: "padding",
+  pt: "padding-top",
+  pb: "padding-bottom",
+  pl: "padding-left",
+  pr: "padding-right",
+  px: "padding-inline",
+  py: "padding-block",
 );
 
-@include tokens.create-utilities(
-  "sizes",
-  (
-    "gap": gap,
-    "gap-row": row-gap,
-    "gap-column": column-gap,
-  )
+$gaps: (
+  "gap": gap,
+  "gap-row": row-gap,
+  "gap-column": column-gap,
 );
+
+@include helpers.create-responsive-classes using ($prefix) {
+  @each $variant, $value in config.$spacing {
+    @each $name, $property in $margins {
+      #{helpers.class-name($name, $variant, $prefix)} {
+        #{$property}: helpers.get-var("spacing", $variant);
+      }
+    }
+
+    @each $name, $property in $paddings {
+      #{helpers.class-name($name, $variant, $prefix)} {
+        #{$property}: helpers.get-var("spacing", $variant);
+      }
+    }
+
+    @each $name, $property in $gaps {
+      #{helpers.class-name($name, $variant, $prefix)} {
+        #{$property}: helpers.get-var("spacing", $variant);
+      }
+    }
+  }
+
+  // We need to loop through margins outside as well to create the "auto" variant;
+  @each $name, $property in $margins {
+    #{helpers.class-name($name, "auto", $prefix)} {
+      #{$property}: auto;
+    }
+  }
+}

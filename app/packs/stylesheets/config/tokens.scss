@@ -1,9 +1,0 @@
-@use "../config/sizes";
-@use "../config/colors";
-@use "../config/fonts";
-
-$map: (
-  "sizes": sizes.$map,
-  "colors": colors.$map,
-  "fonts": fonts.$map,
-);

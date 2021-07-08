@@ -1,7 +1,6 @@
 @use 'sass:map';
-@use '../config/breakpoints';
-@use '../helpers/tokens';
-@use './spacing.scss';
+@use '../helpers';
+@use './spacing';
 
 .sr-only {
   position: absolute;
@@ -16,9 +15,12 @@
 }
 
 .container {
-  @extend .px-400;
-  @extend .lg\:px-600;
-  max-width: map.get(breakpoints.$map, "xxl");
+  padding-inline: helpers.get-var("spacing", 8);
+  max-width: helpers.get-var("bp-width", "xxl");
   width: 100%;
   margin: 0 auto;
+
+  @include helpers.mq("lg") {
+    padding-inline: helpers.get-var("spacing", 12);
+  }
 }

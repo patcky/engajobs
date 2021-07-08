@@ -1,10 +1,12 @@
-@use '../helpers/utilities';
-@use '../helpers/tokens';
+@use 'sass:map';
+@use '../config';
+@use '../helpers';
 
-@include tokens.create-utilities(
-  "sizes",
-  (
-    "text": font-size,
-    "weight": font-weight,
-  )
-);
+@include helpers.create-responsive-classes using ($prefix) {
+  @each $variant, $value in config.$font-sizes {
+    #{helpers.class-name("text", $variant, $prefix)} {
+      font-size: helpers.get-var("font-size", $variant);
+      line-height: helpers.get-var("line-height", $variant);
+    }
+  }
+}
