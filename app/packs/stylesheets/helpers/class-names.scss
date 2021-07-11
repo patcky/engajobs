@@ -1,6 +1,0 @@
-@function class-name($name, $variant, $prefix) {
-  @if ($prefix) {
-    @return ".#{$prefix + '\\:'}#{$name}-#{$variant}";
-  }
-  @return ".#{$name}-#{$variant}";
-}

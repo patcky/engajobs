@@ -2,14 +2,14 @@
 @use '../config';
 @use '../helpers';
 
-@include helpers.create-responsive-classes using ($prefix) {
+@include helpers.create-responsive-classes using ($breakpoint) {
   @each $variant, $value in config.$colors {
-    #{helpers.class-name("bg", $variant, $prefix)} {
-      background-color: helpers.get-var("color", $variant);
+    #{helpers.class-name("bg", $variant, $breakpoint)} {
+      background-color: $value;
     }
 
-    #{helpers.class-name("color", $variant, $prefix)} {
-      color: helpers.get-var("color", $variant);
+    #{helpers.class-name("color", $variant, $breakpoint)} {
+      color: $value;
     }
   }
 }

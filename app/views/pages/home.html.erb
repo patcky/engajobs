@@ -1,15 +1,15 @@
 <!-- Pages/home -->
 <main>
-    <section class="c-content-section bg-gray">
-        <div class="c-content-section__container">
+    <section class="bg-gray py-12">
+        <div class="container l-stack gap-4">
             <h1>Engajobs</h1>
             <p>Conectando pessoas. Abraçando diversidades.</p>
-            <%= link_to 'Cadastre-se', new_user_registration_path, class: 'c-button c-button--primary ml-auto' %>
+            <%= link_to 'Cadastre-se', new_user_registration_path, class: 'c-button ml-auto' %>
         </div>
     </section>
     <div class="c-wave-separator"></div>
-    <section class="c-content-section">
-        <div class="c-content-section__container">
+    <section class="py-12">
+        <div class="container l-stack gap-4">
             <h2>Nossas bandeiras</h2>
 
             <% @causes.each.with_index do |cause, index| -%>
@@ -26,21 +26,21 @@
     </section>
     <div class="c-wave-separator--flipped"></div>
 
-    <section class="c-content-section bg-gray l-stack">
-        <div class="c-content-section__container">
+    <section class="py-12 bg-gray l-stack gap-12">
+        <div class="container l-stack gap-6">
             <h2>Quem nos apoia</h2>
             <ul class="l-grid">
                 <% @brands.each do |brand| -%>
-                <li class="c-brand-highlight l-stack">
+                <li class="c-brand-highlight">
                     <img class="c-brand-highlight__image" src="<%= brand.image %>" alt="<%= brand.image_alt %>">
                     <span class="c-brand-highlight__label"><%= brand.name %></span>
                 </li>
                 <% end -%>
             </ul>
 
-            <a href="#" class="c-button c-button--primary m-auto">Apoie</a>
+            <a href="#" class="c-button m-auto">Apoie</a>
         </div>
-        <div class="c-content-section__container">
+        <div class="container l-stack gap-6">
             <h2>Entenda a causa</h2>
             <div class="stack">
                 <div>

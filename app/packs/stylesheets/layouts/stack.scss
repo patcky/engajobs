@@ -1,9 +1,8 @@
-@use '../helpers';
+@use '../config';
 
 .l-stack {
   display: flex;
   flex-direction: column;
-  gap: helpers.get-var("sizes", 400);
 
   & > * {
     margin-top: 0;

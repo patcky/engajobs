@@ -1,3 +1,26 @@
-@forward './breakpoints';
-@forward './class-names';
-@forward './vars';
+@use "sass:meta";
+@use "sass:map";
+@use '../config';
+
+@mixin mq($key) {
+  @media (min-width: #{map.get(config.$breakpoints, $key)}) {
+    @content;
+  }
+}
+
+@mixin create-responsive-classes {
+  @content (null);
+
+  @each $breakpoint, $_ in config.$breakpoints {
+    @include mq($breakpoint) {
+      @content ($breakpoint);
+    }
+  }
+}
+
+@function class-name($name, $variant, $prefix) {
+  @if ($prefix) {
+    @return ".#{$prefix + '\\:'}#{$name}-#{$variant}";
+  }
+  @return ".#{$name}-#{$variant}";
+}

@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $breakpoints: (
   "sm": 576px,
   "md": 768px,
@@ -5,3 +7,7 @@ $breakpoints: (
   "xl": 1200px,
   "xxl": 1400px,
 );
+
+@function breakpoint($variant) {
+  @return map.get($breakpoints, $variant);
+}

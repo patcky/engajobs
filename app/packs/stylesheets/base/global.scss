@@ -1,12 +1,12 @@
-@use '../helpers';
+@use '../config';
 
 body {
-  font-family: helpers.get-var("font", "content");
-  background-color: helpers.get-var("color", "white");
-  color: helpers.get-var("color", "black");
+  font-family: config.font("content");
+  background-color: config.color("white");
+  color: config.color("black");
 }
 
 h1,
 h2 {
-  font-family: helpers.get-var("font", "display");
+  font-family: config.font("display");
 }

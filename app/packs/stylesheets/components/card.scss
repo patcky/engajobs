@@ -1,9 +1,9 @@
-@use '../helpers';
+@use '../config';
 
 .c-card {
   display: flex;
   flex-direction: row;
-  gap: helpers.get-var("sizes", "500");
+  gap: config.spacing(4);
 
   &__image {
     height: 115px;

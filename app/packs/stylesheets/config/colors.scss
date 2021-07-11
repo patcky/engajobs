@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $colors: (
   "transparent": "transparent",
   "black": #000,
@@ -12,3 +14,7 @@ $colors: (
   "blue-shade": #4f668b,
   "green": #adf7b6,
 );
+
+@function color($variant) {
+  @return map.get($colors, $variant);
+}

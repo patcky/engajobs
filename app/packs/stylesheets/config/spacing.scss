@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'sass:meta';
+
 $spacing: (
   "0": 0px,
   "px": 1px,
@@ -35,3 +38,7 @@ $spacing: (
   "80": 20rem,
   "96": 24rem,
 );
+
+@function spacing($variant) {
+  @return map.get($spacing, meta.inspect($variant));
+}

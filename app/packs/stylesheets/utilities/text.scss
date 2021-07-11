@@ -2,11 +2,11 @@
 @use '../config';
 @use '../helpers';
 
-@include helpers.create-responsive-classes using ($prefix) {
+@include helpers.create-responsive-classes using ($breakpoint) {
   @each $variant, $value in config.$font-sizes {
-    #{helpers.class-name("text", $variant, $prefix)} {
-      font-size: helpers.get-var("font-size", $variant);
-      line-height: helpers.get-var("line-height", $variant);
+    #{helpers.class-name("text", $variant, $breakpoint)} {
+      font-size: config.font-size($variant);
+      line-height: config.line-height($variant);
     }
   }
 }

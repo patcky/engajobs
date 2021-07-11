@@ -1,7 +1,9 @@
+@use 'sass:map';
+
 $_rubik: "Rubik", sans-serif;
 $_karla: "Karla", sans-serif;
 
-$fonts: (
+$font: (
   "content": $_karla,
   "headings": $_karla,
   "display": $_rubik,
@@ -32,3 +34,15 @@ $line-heights: (
   "4xl": 2.5rem,
   "5xl": 1,
 );
+
+@function font($variant) {
+  @return map.get($font, $variant);
+}
+
+@function font-size($variant) {
+  @return map.get($font-sizes, $variant);
+}
+
+@function line-height($variant) {
+  @return map.get($line-heights, $variant);
+}

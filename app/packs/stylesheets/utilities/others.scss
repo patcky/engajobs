@@ -1,6 +1,6 @@
 @use 'sass:map';
+@use '../config';
 @use '../helpers';
-@use './spacing';
 
 .sr-only {
   position: absolute;
@@ -15,12 +15,12 @@
 }
 
 .container {
-  padding-inline: helpers.get-var("spacing", 8);
-  max-width: helpers.get-var("bp-width", "xxl");
+  padding-inline: config.spacing(8);
+  max-width: config.breakpoint("xxl");
   width: 100%;
   margin: 0 auto;
 
   @include helpers.mq("lg") {
-    padding-inline: helpers.get-var("spacing", 12);
+    padding-inline: config.spacing(12);
   }
 }

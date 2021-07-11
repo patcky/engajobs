@@ -1,33 +1,31 @@
-@use '../helpers';
+@use '../config';
 
 .c-button {
-  --c-button-color-background: #{helpers.get-var("colors", "white")};
-  --c-button-color-hover: #{helpers.get-var("colors", "gray")};
-  --c-button-color-text: #{helpers.get-var("colors", "black")};
-  --c-button-color-border: #{helpers.get-var("colors", "mid-gray")};
-  --c-button-padding: #{helpers.get-var("sizes", 200)
-    helpers.get-var("sizes", 400)};
-  --c-button-border-radius: #{helpers.get-var("sizes", 400)};
+  --c-button-color-background: #{config.color("white")};
+  --c-button-color-hover: #{config.color("gray")};
+  --c-button-color-text: #{config.color("black")};
+  --c-button-color-border: #{config.color("mid-gray")};
 
   appearance: none;
   cursor: pointer;
   background-color: var(--c-button-color-background);
   color: var(--c-button-color-text);
   text-decoration: none;
-  padding: var(--c-button-padding);
+  padding-inline: config.spacing(8);
+  padding-block: config.spacing(2);
   border: 1px solid var(--c-button-color-border);
-  border-radius: var(--c-button-border-radius);
-  min-width: 16ch;
+  border-radius: config.spacing(8);
   text-align: center;
+  min-width: 16ch;
 
   &:hover {
     background-color: var(--c-button-color-hover);
   }
 
   &--primary {
-    --c-button-color-background: #{helpers.get-var("colors", "orange")};
-    --c-button-color-hover: #{helpers.get-var("colors", "orange-shade")};
-    --c-button-color-text: #{helpers.get-var("colors", "black")};
-    --c-button-color-border: #{helpers.get-var("colors", "orange-shade")};
+    --c-button-color-background: #{config.color("orange")};
+    --c-button-color-hover: #{config.color("orange-shade")};
+    --c-button-color-text: #{config.color("black")};
+    --c-button-color-border: #{config.color("orange-shade")};
   }
 }

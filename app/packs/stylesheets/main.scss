@@ -3,7 +3,6 @@
 
 // Base
 @use "base/reset";
-@use "base/vars";
 @use "base/global";
 
 // Layouts
@@ -11,14 +10,15 @@
 @use "layouts/stack";
 
 // Utilities
-@use "utilities/spacing";
+@use "utilities/gap";
+@use "utilities/margin";
+@use "utilities/padding";
 @use "utilities/colors";
 @use "utilities/text";
-@use "utilities/layout";
+@use "utilities/others";
 
 // Components
 @use "components/alert";
 @use "components/brand-highlight";
 @use "components/button";
 @use "components/card";
-@use "components/content-section";

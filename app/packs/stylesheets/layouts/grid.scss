@@ -1,9 +1,9 @@
-@use '../helpers';
+@use '../config';
 
 .l-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  padding: helpers.get-var("spacing", 0);
-  row-gap: helpers.get-var("spacing", 8);
-  column-gap: helpers.get-var("spacing", 12);
+  padding: config.spacing(0);
+  column-gap: config.spacing(12);
+  row-gap: config.spacing(8);
 }
