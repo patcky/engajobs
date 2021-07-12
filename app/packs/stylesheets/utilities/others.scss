@@ -1,6 +1,4 @@
-@use 'sass:map';
 @use '../config';
-@use '../helpers';
 
 .sr-only {
   position: absolute;
@@ -12,15 +10,4 @@
   white-space: nowrap;
   clip-path: inset(50%);
   border: 0;
-}
-
-.container {
-  padding-inline: config.spacing(8);
-  max-width: config.breakpoint("xxl");
-  width: 100%;
-  margin: 0 auto;
-
-  @include helpers.mq("lg") {
-    padding-inline: config.spacing(12);
-  }
 }

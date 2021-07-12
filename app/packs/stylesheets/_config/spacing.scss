@@ -40,5 +40,12 @@ $spacing: (
 );
 
 @function spacing($variant) {
-  @return map.get($spacing, meta.inspect($variant));
+  $stringVariant: $variant;
+
+  @if (meta.type-of($variant) != string) {
+    $stringVariant: meta.inspect($variant);
+  }
+
+  @debug $stringVariant;
+  @return map.get($spacing, $stringVariant);
 }

@@ -1,9 +1,0 @@
-@use '../config';
-
-.l-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  padding: config.spacing(0);
-  column-gap: config.spacing(12);
-  row-gap: config.spacing(8);
-}

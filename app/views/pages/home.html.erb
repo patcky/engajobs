@@ -1,55 +1,56 @@
 <!-- Pages/home -->
-<main>
-    <section class="bg-gray py-12">
-        <div class="container l-stack gap-4">
-            <h1>Engajobs</h1>
+<main class="stack">
+    <section class="c-home-section">
+        <div class="c-home-section__container">
+            <h1 class="text-uppercase">Engajobs</h1>
             <p>Conectando pessoas. Abraçando diversidades.</p>
             <%= link_to 'Cadastre-se', new_user_registration_path, class: 'c-button ml-auto' %>
         </div>
     </section>
-    <div class="c-wave-separator"></div>
-    <section class="py-12">
-        <div class="container l-stack gap-4">
-            <h2>Nossas bandeiras</h2>
+    <section class="c-home-section">
+        <div class="c-home-section__container">
+            <h2 class="c-home-section__title">Nossas bandeiras</h2>
 
-            <% @causes.each.with_index do |cause, index| -%>
+            <% @keyValues.each.with_index do |keyValue, index| -%>
             <div class="c-card <%= index.odd? ? "c-card--flip" : "" %>">
-                <img class="c-card__image" src="<%= cause.image %>" alt="" srcset="" />
-                <div class=" c-card__content l-stack">
-                    <h3><%= cause.name %></h3>
-                    <p><%= cause.description %></p>
+                <img class="c-card__image" src="<%= keyValue.image %>" alt="" srcset="" />
+                <div class="c-card__content">
+                    <h3 class=""><%= keyValue.name %></h3>
+                    <p><%= keyValue.description %></p>
                 </div>
             </div>
             <% end -%>
         </div>
         </div>
     </section>
-    <div class="c-wave-separator--flipped"></div>
 
-    <section class="py-12 bg-gray l-stack gap-12">
-        <div class="container l-stack gap-6">
-            <h2>Quem nos apoia</h2>
-            <ul class="l-grid">
+
+    <section class="c-home-section c-home-section--blobs stack">
+        <div class="c-home-section__container">
+            <h2 class="c-home-section__title">Quem nos apoia</h2>
+            <ul class="c-brands-highlight">
                 <% @brands.each do |brand| -%>
-                <li class="c-brand-highlight">
-                    <img class="c-brand-highlight__image" src="<%= brand.image %>" alt="<%= brand.image_alt %>">
-                    <span class="c-brand-highlight__label"><%= brand.name %></span>
+                <li class="c-brands-highlight__card">
+                    <img class="c-brands-highlight__image" src="<%= brand.image %>" alt="<%= brand.image_alt %>">
+                    <span class="c-brands-highlight__label"><%= brand.name %></span>
                 </li>
                 <% end -%>
             </ul>
 
             <a href="#" class="c-button m-auto">Apoie</a>
         </div>
-        <div class="container l-stack gap-6">
-            <h2>Entenda a causa</h2>
-            <div class="stack">
-                <div>
-                    <div class="media"></div>
+        <div class="c-home-section__container">
+            <h2 class="c-home-section__title">Entenda a causa</h2>
+            <div class="c-testimonial">
+                <img class="c-testimonial__media" src="https://via.placeholder.com/300x200" width="300" height="200" />
+                <div class="c-testimonial__content">
                     <h3>Esta é a Fulaninha</h3>
                     <p>It's a long established fact that a reader will be distracted</p>
                 </div>
-                <div>
-                    <div class="media"></div>
+            </div>
+            <div class="c-testimonial align-end">
+                <img class="c-testimonial__media" src="https://via.placeholder.com/300x200" width="300" height="200" />
+                <div class="c-testimonial__content text-right">
                     <h3>Este é o Ciclaninho</h3>
                     <p>It's a long established fact that a reader will be distracted</p>
                 </div>

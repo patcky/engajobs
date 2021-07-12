@@ -1,5 +1,5 @@
 {
-  "name": "_engajobs",
+  "name": "engajobs",
   "private": true,
   "scripts": {
     "start:webpacker": "ruby ./bin/webpack-dev-server",

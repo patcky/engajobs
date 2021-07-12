@@ -1,7 +1,7 @@
-<footer class="c-content-section bg-primary mt-auto py-12">
+<footer>
 
-    <div class="container l-stack gap-2">
-        <!-- Image / Name -->
+    <div>
+
         <div>
             <a class="text-decoration-none link-secondary" href="/" aria-label="Engajobs">
                 <%= inline_svg_tag "logo-engajobs-horizontal.svg", class: 'img', width: 120, alt: "" %>
@@ -9,43 +9,43 @@
         </div>
 
 
-        <div class="l-stack gap-100">
-            <h2 class="h5">Serviço</h2>
-            <ul class="pl-none l-stack gap-none" role="list">
+        <div>
+            <h2>Serviço</h2>
+            <ul role="list">
                 <li><%= link_to  "Áreas e Especialidades", areas_path, class: ''%></li>
                 <li><%= link_to  "Contatos de profissionais", public_profiles_path, class: ''%></li>
             </ul>
         </div>
 
-        <div class="l-stack gap-100">
-            <h2 class="h5">Site</h2>
-            <ul class="pl-none l-stack gap-none" role="list">
+        <div>
+            <h2>Site</h2>
+            <ul role="list">
                 <li><%= link_to  "Meus perfis públicos", my_profiles_path, class: ''%></li>
                 <li><a href="" class="">Favoritos</a></li>
             </ul>
         </div>
 
-        <div class="l-stack gap-100">
-            <h2 class="h5">Suporte</h2>
-            <ul class="pl-none l-stack gap-none" role="list">
+        <div>
+            <h2>Suporte</h2>
+            <ul role="list">
                 <li><a href="" class="">Entre em contato</a></li>
                 <li><a href="" class="">Redes sociais</a></li>
             </ul>
         </div>
 
         <!-- Sobre engajobs -->
-        <div class="l-stack gap-100">
-            <h2 class="h5">Engajobs</h2>
-            <ul class="pl-none l-stack gap-none" role="list">
+        <div>
+            <h2>Engajobs</h2>
+            <ul role="list">
                 <li><%= link_to  "Sobre nós", about_path, class: ''%></li>
                 <li><a href="" class="">Impacto Social</a></li>
             </ul>
         </div>
 
 
-        <div class="l-stack gap-100">
-            <h2 class="h5">Nos siga nas redes sociais!</h2>
-            <ul class="pl-none c-card gap-200 m-none" role="list">
+        <div>
+            <h2>Nos siga nas redes sociais!</h2>
+            <ul role="list">
                 <li>
                     <a href="https://twitter.com">
                         <%= inline_svg_tag "logo-twitter.svg", class: "d-block", height: 18, alt: "" %>
@@ -75,7 +75,7 @@
         </div>
 
         <div>
-            <small class="text-muted">&copy;<%= Date.today.year %> Engajobs</small>
+            <small>&copy;<%= Date.today.year %> Engajobs</small>
         </div>
     </div>
 </footer>

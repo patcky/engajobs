@@ -1,0 +1,47 @@
+@use '../config';
+@use '../utilities';
+
+.c-home-section {
+  --background: #{config.color("gray")};
+  --separator: #{config.color("white")};
+
+  @extend .stack;
+  gap: config.spacing(12);
+  overflow: hidden;
+  position: relative;
+  padding: config.spacing(6) config.spacing(4);
+  background-color: var(--background);
+
+  &::after {
+    content: "";
+    height: 36px;
+    display: block;
+    background-color: var(--separator);
+    position: relative;
+    bottom: calc(-#{config.spacing(6)} - #{config.spacing("px")});
+    margin-inline: -#{config.spacing(6)};
+
+    transform: rotate(180deg);
+    -webkit-mask-image: url("~wave-separator.svg");
+    mask-image: url("~wave-separator.svg");
+  }
+
+  &__container {
+    @extend .stack;
+    gap: config.spacing(10);
+  }
+
+  &__title {
+    @extend .text-2xl;
+    font-weight: 400;
+  }
+
+  &:nth-child(even) {
+    --background: #{config.color("white")};
+    --separator: #{config.color("gray")};
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}

@@ -18,9 +18,16 @@
   }
 }
 
-@function class-name($name, $variant, $prefix) {
-  @if ($prefix) {
-    @return ".#{$prefix + '\\:'}#{$name}-#{$variant}";
+@function class-name($name, $variant, $breakpoint) {
+  $class-name: ".#{$name}-#{$variant}";
+
+  @return prefix-breakpoint($class-name, $breakpoint);
+}
+
+@function prefix-breakpoint($name, $breakpoint) {
+  @if ($breakpoint) {
+    @return "#{$breakpoint + '\\:'}#{$name}";
   }
-  @return ".#{$name}-#{$variant}";
+
+  @return "#{$name}";
 }
