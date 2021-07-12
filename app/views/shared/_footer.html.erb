@@ -1,76 +1,69 @@
-<footer class="bg-primary mt-auto">
+<footer class="py-6 px-4">
 
-    <div class="container mx-auto my-4 row">
-        <!-- Image / Name -->
-        <div class="col-12 col-lg-2 mb-4">
-            <a class="text-decoration-none link-secondary" href="/" aria-label="Engajobs">
-                <%= inline_svg_tag "logo-engajobs.svg", class: 'img', width: 60, alt: "" %>
-            </a>
+    <div class="container stack gap-8">
+
+        <a class="text-decoration-none link-secondary" href="/" aria-label="Engajobs">
+            <%= inline_svg_tag "logo-engajobs-horizontal.svg", class: 'img', width: 120, alt: "" %>
+        </a>
+
+
+        <div>
+            <h2>Serviço</h2>
+            <ul role="list">
+                <li><%= link_to  "Áreas e Especialidades", areas_path, class: ''%></li>
+                <li><%= link_to  "Contatos de profissionais", public_profiles_path, class: ''%></li>
+            </ul>
         </div>
 
-        <div class="col-12 col-lg-7">
-            <div class="row">
-                <!-- Sobre serviço oferecido -->
-                <div class="col-12 col-sm-6 col-xl-3">
-                    <h2 class="h5">Serviço</h2>
-                    <ul class="list-unstyled d-grid gap-1 mb-xl-0">
-                        <li><%= link_to  "Áreas e Especialidades", areas_path, class: 'link-secondary text-decoration-none'%></li>
-                        <li><%= link_to  "Contatos de profissionais", public_profiles_path, class: 'link-secondary text-decoration-none'%></li>
-                    </ul>
-                </div>
-
-                <!-- Como usar a plataforma -->
-                <div class="col-12 col-sm-6 col-xl-3">
-                    <h2 class="h5">Site</h2>
-                    <ul class="list-unstyled d-grid gap-1 mb-xl-0">
-                        <li><%= link_to  "Meus perfis públicos", my_profiles_path, class: 'link-secondary text-decoration-none'%></li>
-                        <li><a href="" class="link-secondary text-decoration-none">Favoritos</a></li>
-                    </ul>
-                </div>
-
-                <!-- Suporte -->
-                <div class="col-12 col-sm-6 col-xl-3">
-                    <h2 class="h5">Suporte</h2>
-                    <ul class="list-unstyled d-grid gap-1 mb-lg-0">
-                        <li><a href="" class="link-secondary text-decoration-none">Entre em contato</a></li>
-                        <li><a href="" class="link-secondary text-decoration-none">Redes sociais</a></li>
-                    </ul>
-                </div>
-
-                <!-- Sobre engajobs -->
-                <div class="col-12 col-sm-6 col-xl-3">
-                    <h2 class="h5">Engajobs</h2>
-                    <ul class="list-unstyled d-grid gap-1 mb-lg-0">
-                        <li><%= link_to  "Sobre nós", about_path, class: 'link-secondary text-decoration-none'%></li>
-                        <li><a href="" class="link-secondary text-decoration-none">Impacto Social</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div>
+            <h2>Site</h2>
+            <ul role="list">
+                <li><%= link_to  "Meus perfis públicos", my_profiles_path, class: ''%></li>
+                <li><a href="" class="">Favoritos</a></li>
+            </ul>
         </div>
 
-        <div class="col-12 col-lg-3">
-            <h2 class="h5">Nos siga nas redes sociais!</h2>
-            <ul class="list-unstyled d-flex flex-wrap gap-3">
+        <div>
+            <h2>Suporte</h2>
+            <ul role="list">
+                <li><a href="" class="">Entre em contato</a></li>
+                <li><a href="" class="">Redes sociais</a></li>
+            </ul>
+        </div>
+
+        <!-- Sobre engajobs -->
+        <div>
+            <h2>Engajobs</h2>
+            <ul role="list">
+                <li><%= link_to  "Sobre nós", about_path, class: ''%></li>
+                <li><a href="" class="">Impacto Social</a></li>
+            </ul>
+        </div>
+
+
+        <div>
+            <h2>Nos siga nas redes sociais!</h2>
+            <ul class="row" role="list">
                 <li>
-                    <a href="https://twitter.com" class="link-secondary">
+                    <a href="https://twitter.com">
                         <%= inline_svg_tag "logo-twitter.svg", class: "d-block", height: 18, alt: "" %>
                         <span class="sr-only">Twitter</span>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com" class="link-secondary">
+                    <a href="https://www.facebook.com">
                         <%= inline_svg_tag "logo-facebook.svg", class: "d-block", height: 18, alt: "" %>
                         <span class="sr-only">Facebook</span>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com" class="link-secondary">
+                    <a href="https://www.youtube.com">
                         <%= inline_svg_tag "logo-youtube.svg", class: "d-block", height: 18, alt: "" %>
                         <span class="sr-only">YouTube</span>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com" class="link-secondary">
+                    <a href="https://www.linkedin.com">
                         <%= inline_svg_tag "logo-linkedin.svg", class: "d-block", height: 18, alt: "" %>
                         <span class="sr-only">LinkedIn</span>
                     </a>
@@ -79,8 +72,6 @@
             </ul>
         </div>
 
-        <div class="col-12 text-center">
-            <small class="text-muted">&copy;<%= Date.today.year %> Engajobs</small>
-        </div>
+        <small class="text-center">&copy;<%= Date.today.year %> Engajobs</small>
     </div>
 </footer>

@@ -1,0 +1,24 @@
+@use '../config';
+@use '../utilities';
+
+.c-card {
+  display: flex;
+  flex-direction: row;
+  gap: config.spacing(4);
+
+  &__image {
+    height: 115px;
+    object-fit: contain;
+    width: 148px;
+  }
+
+  &__content {
+    @extend .stack;
+    gap: config.spacing(4);
+    flex: 1;
+  }
+
+  &--flip {
+    flex-direction: row-reverse;
+  }
+}
