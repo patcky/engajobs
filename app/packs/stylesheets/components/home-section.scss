@@ -18,6 +18,7 @@
     display: block;
     background-color: var(--separator);
     position: relative;
+    margin-top: -3rem; // We need to compensate for the flex gap;
     bottom: calc(-#{config.spacing(6)} - #{config.spacing("px")});
     margin-inline: -#{config.spacing(6)};
 
