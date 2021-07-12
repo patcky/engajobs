@@ -12,7 +12,7 @@ $utils: (
   @each $variant, $value in config.$spacing {
     @each $name, $property in $utils {
       #{helpers.class-name($name, $variant, $breakpoint)} {
-        #{$property}: $value;
+        #{$property}: $value !important;
       }
     }
   }

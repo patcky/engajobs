@@ -23,7 +23,12 @@ $variants: map.merge(
   @each $variant, $value in $variants {
     @each $name, $property in $utils {
       #{helpers.class-name($name, $variant, $breakpoint)} {
-        #{$property}: $value;
+        #{$property}: $value !important;
+      }
+
+      // Negative variants
+      #{helpers.class-name("-#{$name}", $variant, $breakpoint)} {
+        #{$property}: -$value !important;
       }
     }
   }

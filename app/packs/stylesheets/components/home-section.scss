@@ -2,21 +2,21 @@
 @use '../utilities';
 
 .c-home-section {
-  --background: #{config.color("gray")};
-  --separator: #{config.color("white")};
+  --c-background: #{config.color("gray")};
+  --c-separator: #{config.color("gray-lightest")};
 
   @extend .stack;
   gap: config.spacing(12);
   overflow: hidden;
   position: relative;
   padding: config.spacing(6) config.spacing(4);
-  background-color: var(--background);
+  background-color: var(--c-background);
 
   &::after {
     content: "";
     height: 36px;
     display: block;
-    background-color: var(--separator);
+    background-color: var(--c-separator);
     position: relative;
     margin-top: -3rem; // We need to compensate for the flex gap;
     bottom: calc(-#{config.spacing(6)} - #{config.spacing("px")});
@@ -38,8 +38,8 @@
   }
 
   &:nth-child(even) {
-    --background: #{config.color("white")};
-    --separator: #{config.color("gray")};
+    --c-background: #{config.color("gray-lightest")};
+    --c-separator: #{config.color("gray")};
   }
 
   &:last-child::after {

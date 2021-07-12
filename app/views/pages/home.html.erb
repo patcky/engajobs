@@ -15,8 +15,8 @@
             <div class="c-card <%= index.odd? ? "c-card--flip" : "" %>">
                 <img class="c-card__image" src="<%= keyValue.image %>" alt="" srcset="" />
                 <div class="c-card__content">
-                    <h3 class=""><%= keyValue.name %></h3>
-                    <p><%= keyValue.description %></p>
+                    <h3 class="text-base text-uppercase"><%= keyValue.name %></h3>
+                    <p class="text-sm"><%= keyValue.description %></p>
                 </div>
             </div>
             <% end -%>
@@ -25,7 +25,7 @@
     </section>
 
 
-    <section class="c-home-section c-home-section--blobs stack">
+    <section class="c-home-section c-home-section--blobs stack gap-12">
         <div class="c-home-section__container">
             <h2 class="c-home-section__title">Quem nos apoia</h2>
             <ul class="c-brands-highlight">
