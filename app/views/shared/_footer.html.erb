@@ -1,12 +1,10 @@
-<footer>
+<footer class="py-6 px-4">
 
-    <div>
+    <div class="container stack gap-8">
 
-        <div>
-            <a class="text-decoration-none link-secondary" href="/" aria-label="Engajobs">
-                <%= inline_svg_tag "logo-engajobs-horizontal.svg", class: 'img', width: 120, alt: "" %>
-            </a>
-        </div>
+        <a class="text-decoration-none link-secondary" href="/" aria-label="Engajobs">
+            <%= inline_svg_tag "logo-engajobs-horizontal.svg", class: 'img', width: 120, alt: "" %>
+        </a>
 
 
         <div>
@@ -45,7 +43,7 @@
 
         <div>
             <h2>Nos siga nas redes sociais!</h2>
-            <ul role="list">
+            <ul class="row" role="list">
                 <li>
                     <a href="https://twitter.com">
                         <%= inline_svg_tag "logo-twitter.svg", class: "d-block", height: 18, alt: "" %>
@@ -74,8 +72,6 @@
             </ul>
         </div>
 
-        <div>
-            <small>&copy;<%= Date.today.year %> Engajobs</small>
-        </div>
+        <small class="text-center">&copy;<%= Date.today.year %> Engajobs</small>
     </div>
 </footer>
