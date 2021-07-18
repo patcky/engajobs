@@ -1,2 +1,2 @@
 //= link_tree ../images
-//= link_tree ../stylesheets
+//= require_tree ../../packs/stylesheets
