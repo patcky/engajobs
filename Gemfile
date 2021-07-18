@@ -30,6 +30,7 @@ gem 'devise'
 gem 'pundit'
 gem 'inline_svg'
 gem 'webpacker', '6.0.0.beta.7'
+gem 'sass-rails'
 
 group :development, :test do
   gem 'pry-byebug'
