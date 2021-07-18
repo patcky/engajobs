@@ -31,7 +31,6 @@ gem 'pundit'
 gem 'inline_svg'
 gem 'webpacker', '6.0.0.beta.7'
 gem 'sass-rails'
-gem 'webpacker', '~> 4.3.0'
 
 
 group :development, :test do
