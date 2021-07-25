@@ -91,6 +91,12 @@ ActiveRecord::Schema.define(version: 2021_06_27_002052) do
     t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "links", force: :cascade do |t|
     t.integer "link_type"
     t.string "url"
@@ -117,6 +123,15 @@ ActiveRecord::Schema.define(version: 2021_06_27_002052) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["public_profile_id"], name: "index_profile_contacts_on_public_profile_id"
+  end
+
+  create_table "profile_languages", force: :cascade do |t|
+    t.bigint "public_profile_id", null: false
+    t.bigint "language_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_profile_languages_on_language_id"
+    t.index ["public_profile_id"], name: "index_profile_languages_on_public_profile_id"
   end
 
   create_table "provider_specialities", force: :cascade do |t|
@@ -192,6 +207,8 @@ ActiveRecord::Schema.define(version: 2021_06_27_002052) do
   add_foreign_key "links", "public_profiles"
   add_foreign_key "profile_business_hours", "public_profiles"
   add_foreign_key "profile_contacts", "public_profiles"
+  add_foreign_key "profile_languages", "languages"
+  add_foreign_key "profile_languages", "public_profiles"
   add_foreign_key "provider_specialities", "public_profiles"
   add_foreign_key "provider_specialities", "specialities"
   add_foreign_key "public_profiles", "users"
