@@ -5,6 +5,6 @@
     <% end %>
 </ul>
 
-<% if policy(Language).new? %>
+<% if user_signed_in? and policy(Language).new? %>
     <p><%= link_to "Adicionar nova área", new_language_path %></p>
 <% end %>

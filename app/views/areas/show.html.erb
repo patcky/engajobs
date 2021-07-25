@@ -5,15 +5,15 @@
     <% end %>
 <% else %>
     <p><%= "Essa area ainda não possui nenhuma especialidade!" %></p>
-    <% if policy(Speciality).new? %>
+    <% if user_signed_in? and policy(Speciality).new? %>
         <%= link_to "Adicionar nova especialidade", new_area_speciality_path(@area) %>
     <% end %>
 <% end %>
 
-<% if policy(Area).edit? %>
+<% if user_signed_in? and policy(Area).edit? %>
     <p><%= link_to 'Editar', edit_area_path(@area) %></p>
 <% end %>
-<% if policy(Area).destroy? %>
+<% if user_signed_in? and policy(Area).destroy? %>
     <p><%= link_to 'Excluir', area_path(@area), method: :delete, data: { confirm: 'Tem certeza que deseja excluir essa área?' } %></p>
 <% end %>
 <p><%= link_to 'Voltar', areas_path %></p>
