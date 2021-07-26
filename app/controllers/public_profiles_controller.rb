@@ -10,7 +10,7 @@ class PublicProfilesController < ApplicationController
     @public_profiles = policy_scope(PublicProfile).where(user: current_user).order(created_at: :desc)
   end
 
-  def show 
+  def show
   end
 
   def new
@@ -43,7 +43,7 @@ class PublicProfilesController < ApplicationController
   end
 
   private
-  
+
   def set_public_profile
     @public_profile = PublicProfile.find(params[:id])
     authorize @public_profile
