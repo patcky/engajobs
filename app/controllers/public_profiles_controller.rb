@@ -1,3 +1,4 @@
+require 'pry-byebug'
 class PublicProfilesController < ApplicationController
   before_action :set_public_profile, only: [:show, :edit, :update, :destroy]
   skip_after_action :verify_authorized, only: :user_public_profiles
@@ -16,6 +17,9 @@ class PublicProfilesController < ApplicationController
   def new
     @public_profile = PublicProfile.new
     authorize @public_profile
+    @public_profile.provider_specialities.build
+    @public_profile.profile_languages.build
+    @public_profile.links.build
   end
 
   def create
@@ -33,11 +37,13 @@ class PublicProfilesController < ApplicationController
   end
 
   def update
+    binding.pry
     @public_profile.update(public_profile_params)
     redirect_to public_profile_path(@public_profile)
   end
 
   def destroy
+    binding.pry
     @public_profile.destroy
     redirect_to public_profiles_path
   end
@@ -61,7 +67,25 @@ class PublicProfilesController < ApplicationController
         :has_online_service,
         :has_home_service,
         :is_pcd,
-        :is_validated
+        :is_validated, 
+        provider_specialities_attributes: [
+          :id,
+          :speciality_ids,
+          :_destroy
+        ],
+        profile_languages_attributes: [
+          :id,
+          :language_ids,
+          :_destroy
+        ],
+        links_attributes: [
+          :id,
+          :link_type, 
+          :url,
+          :_destroy
+        ],
     )
   end
+
+
 end
