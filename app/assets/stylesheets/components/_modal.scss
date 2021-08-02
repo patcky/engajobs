@@ -1,18 +1,11 @@
-.open-modal {
-  position: relative;
-  animation: openModal 3s linear 1s slidein;
-}
-@keyframes openModal {
-  from {top: -220px;}
-  to {top: 200px;}
-}
 
-.close-modal {
-  animation: closeModal 3s linear
-
-}
-
-@keyframes closeModal {
-  from {top: 200px;}
-  to {top: -220px;}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%
+  overflow: auto;
 }
