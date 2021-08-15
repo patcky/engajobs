@@ -6,7 +6,7 @@
         <% end %>
     <% else %>
     <p><%= "Esse perfil ainda não possui nenhuma especialidade!" %></p>
-    <% if policy(ProviderSpeciality).new? %>
+    <% if user_signed_in? and policy(ProviderSpeciality).new? %>
         <%= link_to "Adicionar nova especialidade", new_public_profile_provider_speciality_path(@public_profile) %>
     <% end %>
 <% end %>

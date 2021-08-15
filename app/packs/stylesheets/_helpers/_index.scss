@@ -1,0 +1,33 @@
+@use "sass:meta";
+@use "sass:map";
+@use '../config';
+
+@mixin mq($key) {
+  @media (min-width: #{map.get(config.$breakpoints, $key)}) {
+    @content;
+  }
+}
+
+@mixin create-responsive-classes {
+  @content (null);
+
+  @each $breakpoint, $_ in config.$breakpoints {
+    @include mq($breakpoint) {
+      @content ($breakpoint);
+    }
+  }
+}
+
+@function class-name($name, $variant, $breakpoint) {
+  $class-name: ".#{$name}-#{$variant}";
+
+  @return prefix-breakpoint($class-name, $breakpoint);
+}
+
+@function prefix-breakpoint($name, $breakpoint) {
+  @if ($breakpoint) {
+    @return "#{$breakpoint + '\\:'}#{$name}";
+  }
+
+  @return "#{$name}";
+}
