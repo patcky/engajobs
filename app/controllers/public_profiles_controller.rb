@@ -20,6 +20,7 @@ class PublicProfilesController < ApplicationController
     @public_profile.provider_specialities.build
     @public_profile.profile_languages.build
     @public_profile.links.build
+    @public_profile.profile_contacts.build
   end
 
   def create
@@ -34,6 +35,10 @@ class PublicProfilesController < ApplicationController
   end
 
   def edit
+    @public_profile.provider_specialities.build
+    @public_profile.profile_languages.build
+    @public_profile.links.build
+    @public_profile.profile_contacts.build
   end
 
   def update
@@ -43,7 +48,6 @@ class PublicProfilesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @public_profile.destroy
     redirect_to public_profiles_path
   end
@@ -70,18 +74,24 @@ class PublicProfilesController < ApplicationController
         :is_validated, 
         provider_specialities_attributes: [
           :id,
-          :speciality_ids,
+          :speciality_id,
           :_destroy
         ],
         profile_languages_attributes: [
           :id,
-          :language_ids,
+          :language_id,
           :_destroy
         ],
         links_attributes: [
           :id,
           :link_type, 
           :url,
+          :_destroy
+        ],
+        profile_contacts_attributes: [
+          :id,
+          :profile_contact_type, 
+          :profile_contact_value,
           :_destroy
         ],
     )
