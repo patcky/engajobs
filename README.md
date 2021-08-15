@@ -41,9 +41,28 @@ rails s
 ```
 It will tell you on wich door it is running, then you go to your browser and type `localhost:3000` or whatever number is your port.
 
-## Test
+## Unitary tests
 
-Currently, we have not implemented tests yet. 
+Currently, we have not implemented unitary tests yet. 
+
+## Configure deploying on Heroku
+
+First, make sure you are logged in to Heroku and have the correct permissions to deploy on the app configuration.
+```
+heroku git:remote -a engajobs-staging
+git remote rename heroku heroku-staging
+```
+## Test deploying on Heroku
+
+After logging on Heroku and setting the remote, you can push your code from a local branch to the Heroku remote with this command:
+```
+git push heroku-staging YOUR_BRANCH_NAME_HERE:main
+```
+Don't forget to replace the branch name in the command above. 
+This command will push your branch to the main branch in heroku. If you just want to push from Github's main to Heroku main, make sure you have pulled the most recent changes to your local main and then run:
+```
+git push heroku-staging main
+```
 
 ## Team
 
@@ -52,6 +71,14 @@ The awesome team responsible for developing and maintaining this project:
 - Patricia Bolner Camiansky
 - Angelita Junia dos Santos
 - Raphael Costa
-- 
+- Duda Carvalho
+- Gillys Ayres
+- Matheus Ligabue
+- Carla Valdivia
+- Gergő Karcagi
+- Carolina Zorzetti
+- Bruno Johnson
+- Roberto Botelho
+
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.

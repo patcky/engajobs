@@ -1,0 +1,75 @@
+<footer class="bg-secondary mt-auto">
+  <div class="container mx-auto my-4 row">
+
+    <div class="col-12 mt-2">
+      <%= inline_svg_tag "logo-engajobs-rainbow.svg", class: 'd-block mx-auto' %>
+    </div>
+
+    <div class="col-12 col-lg-7">
+      <div class="row">
+        <!-- Sobre serviço oferecido -->
+        <div class="col-12 col-sm-6 col-xl-3 mt-3">
+          <h2 class="h5 text-light fw-normal">Serviços</h2>
+          <ul class="list-unstyled d-grid gap-1 mb-xl-0">
+            <li><%= link_to  "Áreas e Especialidades", areas_path, class: 'link-light text-decoration-none small'%></li>
+            <li><%= link_to  "Contatos de profissionais", public_profiles_path, class: 'link-light text-decoration-none small'%></li>
+          </ul>
+      </div>
+
+
+      <!-- Como usar a plataforma -->
+      <div class="col-12 col-sm-6 col-xl-3 mt-3">
+        <h2 class="h5 text-light fw-normal">Site</h2>
+        <ul class="list-unstyled d-grid gap-1 mb-xl-0">
+          <li><%= link_to  "Meus perfis públicos", my_profiles_path, class: 'link-light text-decoration-none small'%></li>
+          <li><a href="" class="link-light text-decoration-none small">Favoritos</a></li>
+        </ul>
+      </div>
+
+      <!-- Suporte -->
+      <div class="col-12 col-sm-6 col-xl-3 mt-3">
+        <h2 class="h5 text-light fw-normal">Suporte</h2>
+        <ul class="list-unstyled d-grid gap-1 mb-lg-0">
+          <li><a href="" class="link-light text-decoration-none small">Entre em contato</a></li>
+          <li><a href="" class="link-light text-decoration-none small">Redes sociais</a></li>
+        </ul>
+      </div>
+
+      <!-- Sobre engajobs -->
+      <div class="col-12 col-sm-6 col-xl-3 mt-3">
+        <h2 class="h5 text-light fw-normal">Engajobs</h2>
+        <ul class="list-unstyled d-grid gap-1 mb-lg-0">
+          <li><%= link_to  "Sobre nós", about_path, class: 'link-light text-decoration-none small'%></li>
+          <li><a href="" class="link-light text-decoration-none small">Impacto Social</a></li>
+        </ul>
+      </div>
+
+      <div class="mt-2">
+        <h2 class="h5 text-light fw-normal">Apoiadores</h2>
+      </div>
+
+      <div class="mt-2">
+        <h2 class="h5 text-light fw-normal">Contato</h2>
+      </div>
+
+      <div class="mt-2">
+        <h2 class="h5 text-light fw-normal">Termos de Uso</h2>
+      </div>
+
+      <div class="mt-2">
+        <h2 class="h5 text-light fw-light small">Nos siga nas redes sociais!</h2>
+      </div>
+
+      <div class="mt-3">
+        <ul class="list-unstyled d-flex">
+          <li><%= inline_svg_tag "logo-instagram-f.svg", class: "me-3" %></li>
+          <li><%= inline_svg_tag "logo-linkedin-f.svg", class: "me-3" %></li>
+          <li><%= inline_svg_tag "logo-facebook-f.svg", class: "me-3" %></li>
+          <li><%= inline_svg_tag "logo-twitter-f.svg", class: "me-3" %></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</footer>

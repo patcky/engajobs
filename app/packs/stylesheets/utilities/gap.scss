@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../config';
+@use '../helpers';
+
+$utils: (
+  "gap": gap,
+  "gap-row": row-gap,
+  "gap-column": column-gap,
+);
+
+@include helpers.create-responsive-classes using ($breakpoint) {
+  @each $variant, $value in config.$spacing {
+    @each $name, $property in $utils {
+      #{helpers.class-name($name, $variant, $breakpoint)} {
+        #{$property}: $value !important;
+      }
+    }
+  }
+}

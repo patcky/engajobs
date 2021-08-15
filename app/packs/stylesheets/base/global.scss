@@ -1,0 +1,12 @@
+@use '../config';
+
+body {
+  font-family: config.font("content");
+  background-color: config.color("white");
+  color: config.color("black");
+}
+
+h1,
+h2 {
+  font-family: config.font("display");
+}

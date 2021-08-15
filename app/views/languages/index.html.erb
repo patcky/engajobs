@@ -1,0 +1,10 @@
+<h1>Línguas</h1>
+<ul>
+    <% @languages.each do |language| %>
+        <li> <%= link_to  language.name, language_path(language) %> </li>
+    <% end %>
+</ul>
+
+<% if user_signed_in? and policy(Language).new? %>
+    <p><%= link_to "Adicionar nova área", new_language_path %></p>
+<% end %>
