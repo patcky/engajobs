@@ -1,4 +1,3 @@
-require 'pry-byebug'
 class PublicProfilesController < ApplicationController
   before_action :set_public_profile, only: [:show, :edit, :update, :destroy]
   skip_after_action :verify_authorized, only: :user_public_profiles
@@ -42,7 +41,6 @@ class PublicProfilesController < ApplicationController
   end
 
   def update
-    #binding.pry
     @public_profile.update(params_clean(public_profile_params))
     redirect_to public_profile_path(@public_profile)
   end
