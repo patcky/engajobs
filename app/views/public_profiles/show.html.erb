@@ -24,6 +24,16 @@
         <%= 'Não PCD' %>
     <% end %>
 </p>
+<h2>Linguas:</h2>
+<ul>
+<% if @public_profile.profile_languages %>
+    <% @public_profile.profile_languages.each do |profile_languages| %>
+        <li> <%= profile_languages.language.name %> </li>
+    <% end %>
+<% else %>
+    <%= 'Não possui linguagens' %>
+<% end %>
+</ul>
 
 <h2>Especialidades:</h2>
 <ul>

@@ -3,12 +3,10 @@
 
 <head>
     <title>Engajobs</title>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= render 'shared/head-commons' %>
 </head>
 
 <body class="stack gap-none">
@@ -28,9 +26,4 @@
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-
-</html>
->>>>>>> 83a8719abbfb26dbb781d0591f344841ef27824e

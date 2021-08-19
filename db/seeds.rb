@@ -88,7 +88,8 @@ users = User.create([
         password: '123456',
         district: 'Liberdade', 
         city: 'São Paulo', 
-        state: 'SP'
+        state: 'SP',
+        country: 'BR'
     },
     { 
         name: 'Test User 2', 
@@ -96,7 +97,8 @@ users = User.create([
         password: '123456',
         district: 'Liberdade', 
         city: 'São Paulo', 
-        state: 'SP'
+        state: 'SP',
+        country: 'BR'
     },
     { 
         name: 'Test Admin', 
@@ -105,6 +107,7 @@ users = User.create([
         district: 'Liberdade', 
         city: 'São Paulo', 
         state: 'SP',
+        country: 'BR',
         admin: true
     }
 ])
@@ -125,7 +128,6 @@ public_profiles = PublicProfile.create([
         has_online_service: true,
         has_home_service: false,
         is_pcd: false,
-        is_validated: true,
         user_id: first_user_id
     },
     { 
@@ -138,7 +140,6 @@ public_profiles = PublicProfile.create([
         has_online_service: false,
         has_home_service: true,
         is_pcd: true,
-        is_validated: true,
         user_id: last_user_id
     }
 ])

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_150704) do
+ActiveRecord::Schema.define(version: 2021_08_15_181026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "address_business_hours", force: :cascade do |t|
-    t.integer "day"
-    t.time "open_time"
-    t.time "close_time"
+    t.integer "day", null: false
+    t.time "open_time", null: false
+    t.time "close_time", null: false
     t.bigint "address_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "address_contacts", force: :cascade do |t|
-    t.integer "address_contact_type"
-    t.string "address_contact_value"
+    t.string "address_contact_type", null: false
+    t.string "address_contact_value", null: false
     t.bigint "address_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
     t.string "complement"
     t.string "district"
     t.string "city"
-    t.string "state"
-    t.string "country"
+    t.string "state", null: false
+    t.string "country", null: false
     t.bigint "public_profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "areas", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -92,14 +92,14 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "languages", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "links", force: :cascade do |t|
-    t.integer "link_type"
-    t.string "url"
+    t.integer "link_type", null: false
+    t.string "url", null: false
     t.bigint "public_profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -107,9 +107,9 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "profile_business_hours", force: :cascade do |t|
-    t.integer "day"
-    t.time "open_time"
-    t.time "close_time"
+    t.integer "day", null: false
+    t.time "open_time", null: false
+    t.time "close_time", null: false
     t.bigint "public_profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -117,8 +117,8 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "profile_contacts", force: :cascade do |t|
-    t.integer "profile_contact_type"
-    t.string "profile_contact_value"
+    t.string "profile_contact_type", null: false
+    t.string "profile_contact_value", null: false
     t.bigint "public_profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -144,17 +144,16 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "public_profiles", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "professional_registry"
-    t.text "description"
+    t.string "description", null: false
     t.string "gender"
     t.string "ethnicity"
     t.integer "age"
     t.string "photo"
-    t.boolean "has_online_service"
-    t.boolean "has_home_service"
+    t.boolean "has_online_service", null: false
+    t.boolean "has_home_service", null: false
     t.boolean "is_pcd"
-    t.boolean "is_validated", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -172,7 +171,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
   end
 
   create_table "specialities", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.bigint "area_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -187,12 +186,13 @@ ActiveRecord::Schema.define(version: 2021_06_20_150704) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
+    t.string "name", null: false
     t.string "district"
     t.string "city"
     t.string "state"
     t.boolean "status", default: false
     t.boolean "admin", default: false
+    t.string "country"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
