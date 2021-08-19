@@ -1,13 +1,56 @@
+<!-- For more info on this form, see https://rubydoc.info/github/plataformatec/simple_form/master/SimpleForm -->
+
 <%= simple_form_for [@user, @public_profile] do |f| %>
-    <%= f.input :name, :label => 'Nome' %>
-    <%= f.input :professional_registry, :label => 'Número de registro profissional' %>
-    <%= f.input :description, :label => 'Descrição do perfil' %>
-    <%= f.input :gender, :label => 'Gênero' %>
-    <%= f.input :ethnicity, :label => 'Etnicidade' %>
-    <%= f.input :age, :label => 'Idade' %>
-    <%= f.input :photo, :label => 'Foto' %>
-    <%= f.input :has_online_service, :label => 'Realiza atendimento online' %>
-    <%= f.input :has_home_service, :label => 'Realiza atendimento domiciliar' %>
-    <%= f.input :is_pcd, :label => 'É PCD' %>
+    <%= f.input :name, label: 'Nome' %>
+    <%= f.input :professional_registry, label: 'Número de registro profissional' %>
+    <%= f.input :description, label: 'Descrição do perfil' %>
+    <%= f.input :gender, label: 'Gênero' %>
+    <%= f.input :ethnicity, label: 'Etnicidade' %>
+    <%= f.input :age, label: 'Idade' %>
+    <%= f.input :photo, label: 'Foto' %>
+    <%= f.input :has_online_service, label: 'Realiza atendimento online' %>
+    <%= f.input :has_home_service, label: 'Realiza atendimento domiciliar' %>
+    <%= f.input :is_pcd, label: 'É PCD' %>
+
+    <h2> Especialidades: </h2>
+    <%= f.simple_fields_for :provider_specialities do |provider_specialities_form| %>
+        <%= provider_specialities_form.input :speciality_id, collection: Speciality.all, label: 'Especialidade' %>
+    <% end %>
+
+    <h2> Links: </h2>
+    <%= f.simple_fields_for :links do |links_form| %>
+        <%= links_form.input :link_type, collection: [1, 2, 3], label: 'Tipo de Link' %>
+        <%= links_form.input :url, label: 'URL' %>
+    <% end %>
+
+    <h2> Linguagens: </h2>
+    <%= f.simple_fields_for :profile_languages do |profile_languages_form| %>
+        <%= profile_languages_form.input :language_id, collection: Language.all, label: 'Linguagem' %>
+    <% end %>
+
+    <h2> Contatos: </h2>
+    <%= f.simple_fields_for :profile_contacts do |profile_contacts_form| %>
+        <%= profile_contacts_form.input :profile_contact_type, collection: [1, 2, 3], label: 'Tipo de contato' %>
+        <%= profile_contacts_form.input :profile_contact_value, label: 'Contato' %>
+    <% end %>
+
+    <h2> Horários: </h2>
+    <%= f.simple_fields_for :profile_business_hours do |profile_business_hours_form| %>
+        <%= profile_business_hours_form.input :day, collection: [1, 2, 3, 4, 5, 6, 7], label: 'Dia' %>
+        <%= profile_business_hours_form.input :open_time, label: 'Horário de início' %>
+        <%= profile_business_hours_form.input :close_time, label: 'Horário final' %>
+    <% end %>
+
+    <!-- <h2> Endereços: </h2>
+    <%= f.simple_fields_for :addresses do |addresses_form| %>
+        <%= addresses_form.input :street, label: 'Rua' %>
+        <%= addresses_form.input :number, label: 'Numero' %>
+        <%= addresses_form.input :complement, label: 'Complemento' %>
+        <%= addresses_form.input :district, label: 'Bairro' %>
+        <%= addresses_form.input :city, label: 'Cidade' %>
+        <%= addresses_form.input :state, label: 'Estado' %>
+        <%= addresses_form.input :country, collection: ['Brazil', 'USA'], label: 'País' %>
+    <% end %> -->
+
     <%= f.submit %>
 <% end %>

@@ -16,10 +16,14 @@ class PublicProfilesController < ApplicationController
   def new
     @public_profile = PublicProfile.new
     authorize @public_profile
+    @public_profile.provider_specialities.build
+    @public_profile.profile_languages.build
+    @public_profile.links.build
+    @public_profile.profile_contacts.build
   end
 
   def create
-    @public_profile = PublicProfile.new(public_profile_params)
+    @public_profile = PublicProfile.new(params_clean(public_profile_params))
     @public_profile.user = current_user
     authorize @public_profile
     if @public_profile.save
@@ -30,10 +34,14 @@ class PublicProfilesController < ApplicationController
   end
 
   def edit
+    @public_profile.provider_specialities.build
+    @public_profile.links.build
+    @public_profile.profile_languages.build
+    @public_profile.profile_contacts.build
   end
 
   def update
-    @public_profile.update(public_profile_params)
+    @public_profile.update(params_clean(public_profile_params))
     redirect_to public_profile_path(@public_profile)
   end
 
@@ -43,6 +51,15 @@ class PublicProfilesController < ApplicationController
   end
 
   private
+
+  def params_clean(_params)
+    _params.delete_if do |k, v|
+      if v.instance_of?(ActionController::Parameters)
+        params_clean(v)
+      end
+      v.empty?
+    end
+  end
   
   def set_public_profile
     @public_profile = PublicProfile.find(params[:id])
@@ -61,7 +78,38 @@ class PublicProfilesController < ApplicationController
         :has_online_service,
         :has_home_service,
         :is_pcd,
-        :is_validated
+        :is_validated, 
+        provider_specialities_attributes: [
+          :id,
+          :speciality_id,
+          :_destroy
+        ],
+        profile_languages_attributes: [
+          :id,
+          :language_id,
+          :_destroy
+        ],
+        links_attributes: [
+          :id,
+          :link_type, 
+          :url,
+          :_destroy
+        ],
+        profile_contacts_attributes: [
+          :id,
+          :profile_contact_type, 
+          :profile_contact_value,
+          :_destroy
+        ],
+        profile_business_hours_attributes: [
+          :id,
+          :day, 
+          :open_time,
+          :close_time,
+          :_destroy
+        ],
     )
   end
+
+
 end

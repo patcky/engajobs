@@ -47,6 +47,6 @@ class SpecialitiesController < ApplicationController
     end
   
     def speciality_params
-        params.require(:speciality).permit(:name)
+        params.require(:speciality).permit(:name, specialities_ids: [])
     end
 end
