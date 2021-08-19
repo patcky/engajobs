@@ -24,7 +24,7 @@ class PublicProfilesController < ApplicationController
   end
 
   def create
-    @public_profile = PublicProfile.new(public_profile_params)
+    @public_profile = PublicProfile.new(params_clean(public_profile_params))
     @public_profile.user = current_user
     authorize @public_profile
     if @public_profile.save
@@ -36,14 +36,14 @@ class PublicProfilesController < ApplicationController
 
   def edit
     @public_profile.provider_specialities.build
-    @public_profile.profile_languages.build
     @public_profile.links.build
+    @public_profile.profile_languages.build
     @public_profile.profile_contacts.build
   end
 
   def update
-    binding.pry
-    @public_profile.update(public_profile_params)
+    #binding.pry
+    @public_profile.update(params_clean(public_profile_params))
     redirect_to public_profile_path(@public_profile)
   end
 
@@ -53,6 +53,15 @@ class PublicProfilesController < ApplicationController
   end
 
   private
+
+  def params_clean(_params)
+    _params.delete_if do |k, v|
+      if v.instance_of?(ActionController::Parameters)
+        params_clean(v)
+      end
+      v.empty?
+    end
+  end
   
   def set_public_profile
     @public_profile = PublicProfile.find(params[:id])
@@ -92,6 +101,13 @@ class PublicProfilesController < ApplicationController
           :id,
           :profile_contact_type, 
           :profile_contact_value,
+          :_destroy
+        ],
+        profile_business_hours_attributes: [
+          :id,
+          :day, 
+          :open_time,
+          :close_time,
           :_destroy
         ],
     )
