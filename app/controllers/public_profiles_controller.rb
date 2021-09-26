@@ -79,6 +79,7 @@ class PublicProfilesController < ApplicationController
         :has_home_service,
         :is_pcd,
         :is_validated, 
+        :is_lgbt,
         provider_specialities_attributes: [
           :id,
           :speciality_id,
