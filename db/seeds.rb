@@ -128,6 +128,7 @@ public_profiles = PublicProfile.create([
         has_online_service: true,
         has_home_service: false,
         is_pcd: false,
+        is_lgbt: false,
         user_id: first_user_id
     },
     { 
@@ -140,6 +141,7 @@ public_profiles = PublicProfile.create([
         has_online_service: false,
         has_home_service: true,
         is_pcd: true,
+        is_lgbt: true,
         user_id: last_user_id
     }
 ])
