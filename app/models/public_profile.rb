@@ -20,4 +20,25 @@ class PublicProfile < ApplicationRecord
   accepts_nested_attributes_for :profile_business_hours, allow_destroy: true
   accepts_nested_attributes_for :addresses, allow_destroy: true
   accepts_nested_attributes_for :profile_languages, allow_destroy: true
+
+  # include AlgoliaSearch
+
+  # algoliasearch do
+  #   attributes :name, :professional_registry, :description, :gender, :ethnicity, :age, :has_online_service, :has_home_service, :is_pcd, :is_lgbt
+  #   searchableAttributes [
+  #     'name', 
+  #     'professional_registry', 
+  #     'unordered(description)', 
+  #     'gender', 
+  #     'ethnicity', 
+  #     'age', 
+  #     'has_online_service', 
+  #     'has_home_service', 
+  #     'is_pcd', 
+  #     'is_lgbt'
+  #   ]
+  #   #customRanking ['desc(address)']
+
+
+  # end
 end
