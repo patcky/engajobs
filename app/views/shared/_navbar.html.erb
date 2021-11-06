@@ -8,12 +8,18 @@
         <!-- Nav Item -->
         <ul class="ml-auto">
             <% if !(user_signed_in?) %>
-
-            <!-- Nav Item - Login / Register -->
-            <div>
+            <div class="menu-section">
+              <div class="navbar_button" id="navbarButton">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+              </div>
+              <!-- Nav Item - Login / Register -->
+              <div class="navbar" id="navbar">
                 <%= link_to 'Entrar', new_user_session_path, class: 'c-button c-button--primary btn-outline-light me-1' %>
                 <%= link_to 'Registrar', new_user_registration_path, class: 'c-button c-button--primary btn-outline-light' %>
-            </div><!-- Nav Item - Login / Register -->
+              </div><!-- Nav Item - Login / Register -->
+            </div>
 
             <% else %>
 
