@@ -1,6 +1,6 @@
 <!-- For more info on this form, see https://rubydoc.info/github/plataformatec/simple_form/master/SimpleForm -->
 
-<%= simple_form_for [@user, @public_profile] do |f| %>
+<%= simple_form_for [@user, @public_profile], remote: :true do |f| %>
     <%= f.input :name, label: 'Nome' %>
     <%= f.input :professional_registry, label: 'Número de registro profissional' %>
     <%= f.input :description, label: 'Descrição do perfil' %>
