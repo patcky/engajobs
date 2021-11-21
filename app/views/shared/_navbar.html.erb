@@ -1,4 +1,68 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!-- Navbar -->
+<nav class="bg-orange color-black">
+  <div class="container c-card p-200">
+      <!-- Logo / Nome -->
+      <%= inline_svg_tag "logo-engajobs.svg", class: 'img', width: 40 %>
+
+
+      <!-- Nav Item -->
+      <ul class="ml-auto">
+          <% if !(user_signed_in?) %>
+          <div class="menu-section">
+            <div class="navbar_button" id="navbarButton">
+              <div class="one"></div>
+              <div class="two"></div>
+              <div class="three"></div>
+            </div>
+            <!-- Nav Item - Login / Register -->
+            <div class="navbar" id="navbar">
+              <%= link_to 'Entrar', new_user_session_path, class: 'c-button c-button--primary btn-outline-light me-1' %>
+              <%= link_to 'Registrar', new_user_registration_path, class: 'c-button c-button--primary btn-outline-light' %>
+            </div><!-- Nav Item - Login / Register -->
+          </div>
+
+          <% else %>
+
+          <!-- Nav Item - User Information -->
+          <li class="nav-item dropdown no-arrow">
+
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="me-2 d-none d-lg-inline"><%= current_user.email %></span>
+                  <i class="fas fa-user-check fa-md fa-fw"></i>
+              </a>
+
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                  <i class="fas fa-user-secret fa-md fa-fw me-2 text-gray-600"></i>
+                  Editar Perfil Privado
+                  <% end %>
+                  <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                  <i class="fas fa-address-card fa-md fa-fw me-2 text-gray-600"></i>
+                  Editar Perfil Público
+                  <% end %>
+                  <%= link_to about_path, class: 'dropdown-item' do %>
+                  <i class="fas fa-cogs fa-md fa-fw me-2 text-gray-600"></i>
+                  Configurações
+                  <% end %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
+                  <i class="fas fa-sign-out-alt fa-md fa-fw me-2 text-gray-600"></i>
+                  Sair
+                  <% end %>
+              </div><!-- Dropdown - User Information -->
+
+          </li><!-- Nav Item - User Information -->
+
+          <% end %>
+
+      </ul><!-- Nav Item  -->
+
+  </div>
+</nav><!-- Navbar -->
+
+<!-- Le Wagon template Navbar -->
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
   <% end %>
@@ -32,4 +96,5 @@
       <% end %>
     </ul>
   </div>
-</div>
+</div> -->
+<!-- Le Wagon template Navbar -->

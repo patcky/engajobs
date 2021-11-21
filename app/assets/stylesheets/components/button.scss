@@ -1,0 +1,33 @@
+@use '../config';
+@use '../utilities';
+
+.c-button {
+  --c-background: #{config.color("white")};
+  --c-hover: #{config.color("gray")};
+  --c-text: #{config.color("black")};
+  --c-border: #{config.color("gray-mid")};
+
+  @extend .text-base;
+  appearance: none;
+  cursor: pointer;
+  background-color: var(--c-background);
+  color: var(--c-text);
+  text-decoration: none;
+  padding-inline: config.spacing(10);
+  padding-block: config.spacing("1-5");
+  border: 1px solid var(--c-border);
+  border-radius: config.spacing(4);
+  text-align: center;
+  min-width: 16ch;
+
+  &:hover {
+    background-color: var(--c-hover);
+  }
+
+  &--primary {
+    --c-background: #{config.color("orange")};
+    --c-hover: #{config.color("orange-shade")};
+    --c-text: #{config.color("black")};
+    --c-border: #{config.color("orange-shade")};
+  }
+}

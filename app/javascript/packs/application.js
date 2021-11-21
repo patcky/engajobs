@@ -30,4 +30,20 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // Old project stuff below:
+  console.log("oi");
+
+  // initOpenNavbar();
+  // initCloseNavbar();
+  // initToggleNavbar();
+
+  // Navbar
+  // let show = true;
+  // const menuSection = document.querySelector(".menu-section")
+  // const navbarButton = menuSection.querySelector(".navbar_button")
+
+  // navbarButton.addEventListener("click", () => {
+  //   menuSection.classList.toggle("on", show)
+  //   show = !show;
+  // })
 });

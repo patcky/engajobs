@@ -1,4 +1,7 @@
 
+<% if @public_profile.photo.attached? %>
+    <%= cl_image_tag @public_profile.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <h1><%= @public_profile.name %></h1>
 <p>Registro profissional: <%= @public_profile.professional_registry %></p>
 <p>Descrição: <%= @public_profile.description %></p>

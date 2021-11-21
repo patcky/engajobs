@@ -1,2 +1,61 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- Pages/home -->
+<main class="stack">
+    <section class="c-home-section">
+        <div class="c-home-section__container">
+            <h1 class="text-uppercase">Engajobs</h1>
+            <p>Conectando pessoas. Abraçando diversidades.</p>
+            <%= link_to 'Cadastre-se', new_user_registration_path, class: 'c-button ml-auto' %>
+        </div>
+    </section>
+    <section class="c-home-section">
+        <div class="c-home-section__container">
+            <h2 class="c-home-section__title">Nossas bandeiras</h2>
+
+            <% @keyValues.each.with_index do |keyValue, index| -%>
+            <div class="c-card <%= index.odd? ? "c-card--flip" : "" %>">
+                <img class="c-card__image" src="<%= keyValue.image %>" alt="" srcset="" />
+                <div class="c-card__content">
+                    <h3 class="text-base text-uppercase"><%= keyValue.name %></h3>
+                    <p class="text-sm"><%= keyValue.description %></p>
+                </div>
+            </div>
+            <% end -%>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="c-home-section c-home-section--blobs stack gap-12">
+        <div class="c-home-section__container">
+            <h2 class="c-home-section__title">Quem nos apoia</h2>
+            <ul class="c-brands-highlight">
+                <% @brands.each do |brand| -%>
+                <li class="c-brands-highlight__card">
+                    <img class="c-brands-highlight__image" src="<%= brand.image %>" alt="<%= brand.image_alt %>">
+                    <span class="c-brands-highlight__label"><%= brand.name %></span>
+                </li>
+                <% end -%>
+            </ul>
+
+            <a href="#" class="c-button m-auto">Apoie</a>
+        </div>
+        <div class="c-home-section__container">
+            <h2 class="c-home-section__title">Entenda a causa</h2>
+            <div class="c-testimonial">
+                <img class="c-testimonial__media" src="https://via.placeholder.com/300x200" width="300" height="200" />
+                <div class="c-testimonial__content">
+                    <h3>Esta é a Fulaninha</h3>
+                    <p>It's a long established fact that a reader will be distracted</p>
+                </div>
+            </div>
+            <div class="c-testimonial align-end">
+                <img class="c-testimonial__media" src="https://via.placeholder.com/300x200" width="300" height="200" />
+                <div class="c-testimonial__content text-right">
+                    <h3>Este é o Ciclaninho</h3>
+                    <p>It's a long established fact that a reader will be distracted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

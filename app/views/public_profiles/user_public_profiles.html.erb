@@ -1,6 +1,9 @@
 <h1>Meus perfis públicos</h1>
 <ul><% @public_profiles.each do |profile| %>
     <li> <%= link_to  profile.name, public_profile_path(profile) %> 
+    <% if @public_profile.photo.attached? %>
+        <%= cl_image_tag @public_profile.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <%= link_to 'Editar', edit_public_profile_path(profile) %>
     <%= link_to 'Excluir', public_profile_path(profile), method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse perfil? Essa ação é irreversível' } %>
     </li>

@@ -1,0 +1,48 @@
+@use '../config';
+@use '../utilities';
+
+.c-home-section {
+  --c-background: gray;
+  --c-separator: gray-lightest;
+
+  @extend .stack;
+  gap: config.spacing(12);
+  overflow: hidden;
+  position: relative;
+  padding: config.spacing(6) config.spacing(4);
+  background-color: var(--c-background);
+
+  &::after {
+    content: "";
+    height: 36px;
+    display: block;
+    background-color: var(--c-separator);
+    position: relative;
+    margin-top: -3rem; // We need to compensate for the flex gap;
+    bottom: calc(-#{config.spacing(6)} - #{config.spacing("px")});
+    margin-inline: -#{config.spacing(6)};
+
+    transform: rotate(180deg);
+    -webkit-mask-image: url("~wave-separator.svg");
+    mask-image: url("~wave-separator.svg");
+  }
+
+  &__container {
+    @extend .stack;
+    gap: config.spacing(10);
+  }
+
+  &__title {
+    @extend .text-2xl;
+    font-weight: 400;
+  }
+
+  &:nth-child(even) {
+    --c-background: gray-lightest;
+    --c-separator: gray;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}

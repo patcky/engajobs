@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>Engajobs</title>
     <%= csrf_meta_tags %>
@@ -9,12 +9,20 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= render 'shared/head-commons' %>
   </head>
 
-  <body>
+  <body class="stack gap-none">
+    <!-- Navbar -->
     <%= render 'shared/navbar' %>
+    
+    <%= render 'shared/modal' %>
+
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+
+    <!-- Footer -->
+    <%= render 'shared/footer' %>
   </body>
 </html>
