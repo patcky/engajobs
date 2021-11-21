@@ -1,5 +1,6 @@
 <h1>Public Profiles</h1>
 <ul>
+    
     <% @public_profiles.each do |public_profile| %>
         <li> <%= link_to  public_profile.name, public_profile_path(public_profile) %> </li>
     <% end %>

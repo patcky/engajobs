@@ -41,6 +41,8 @@ class PublicProfilesController < ApplicationController
   end
 
   def update
+    require 'pry-byebug'
+    binding.pry
     @public_profile.update(params_clean(public_profile_params))
     redirect_to public_profile_path(@public_profile)
   end
@@ -53,11 +55,15 @@ class PublicProfilesController < ApplicationController
   private
 
   def params_clean(_params)
-    _params.delete_if do |k, v|
-      if v.instance_of?(ActionController::Parameters)
-        params_clean(v)
+    begin
+      _params.delete_if do |k, v|
+        if v.instance_of?(ActionController::Parameters) 
+          params_clean(v)
+        end
+        v != "photo" && v.empty?
       end
-      v.empty?
+    rescue NoMethodError => e
+      return _params
     end
   end
   
