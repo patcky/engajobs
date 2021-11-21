@@ -22,17 +22,12 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
+import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initOpenNavbar, initCloseNavbar } from '../components/modal';
-import { initToggleNavbar } from '../components/navbar';
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("oi");
+document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initOpenNavbar();
-  initCloseNavbar();
-  initToggleNavbar();
 });
