@@ -1,0 +1,12 @@
+version: "3.8"
+services: 
+  dev:
+    image: dev.engajobs:1 # allows image to be reused, as well as rebuilt if we change version number
+    build:
+      context: .
+    ports:
+      - "3000:3000" # http
+    volumes:
+      - ./:/app
+      - ._docker_bundler/:/usr/local/bundle
+    command: ["./run.sh", "bundle", "install"]
