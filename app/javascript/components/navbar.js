@@ -1,21 +1,12 @@
-const initOpenNavbar = () => {
-    if (openModal) {
-      openModal.addEventListener('click', (event) => {
+const initUpdateNavbarOnScroll = () => {
+    let show = true;
+    const menuSection = document.querySelector(".menu-section")
+    const navbarButton = menuSection.querySelector(".navbar_button")
   
-        console.log(event);
-        modal.style.display = "block";
-  
-      } )
-    }
+    navbarButton.addEventListener("click", () => {
+      menuSection.classList.toggle("on", show)
+      show = !show;
+    })
   }
   
-  const initCloseNavbar = () => {
-    if (closeModal) {
-      closeModal.addEventListener('click', (event) => {
-        console.log(event);
-        modal.style.display = "none";
-      })
-    }
-  }
-  
-  export { initOpenNavbar, initCloseNavbar };
+  export { initUpdateNavbarOnScroll };

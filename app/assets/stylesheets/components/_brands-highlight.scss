@@ -1,18 +1,17 @@
 @use '../config';
-@use '../utilities';
 
 .c-brands-highlight {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  padding: config.spacing(0);
-  column-gap: config.spacing(12);
-  row-gap: config.spacing(8);
+  padding: 0;
+  column-gap: 12px;
+  row-gap: 8px;
 
   &__card {
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: config.spacing(3);
+    gap: 3px;
   }
 
   &__image {
