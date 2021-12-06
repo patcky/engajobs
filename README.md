@@ -82,3 +82,8 @@ The awesome team responsible for developing and maintaining this project:
 
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+
+
+docker-compose run --no-deps web
+docker-compose run web rails db:create
+docker-compose run web rails db:migrate

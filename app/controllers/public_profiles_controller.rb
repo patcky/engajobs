@@ -3,7 +3,7 @@ class PublicProfilesController < ApplicationController
   skip_after_action :verify_authorized, only: :user_public_profiles
 
   def index
-    @public_profiles = policy_scope(PublicProfile).order(name: :asc)
+    @public_profiles = policy_scope(PublicProfile).order(name: :asc) 
   end
 
   def user_public_profiles

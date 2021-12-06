@@ -1,12 +1,28 @@
 version: "3.8"
 services: 
-  dev:
-    image: dev.engajobs:1 # allows image to be reused, as well as rebuilt if we change version number
-    build:
-      context: .
-    ports:
-      - "3000:3000" # http
+  # dev:
+  #   image: dev.engajobs:1 # allows image to be reused, as well as rebuilt if we change version number
+  #   build:
+  #     context: .
+  #   ports:
+  #     - "8000:8000" # http
+  #   volumes:
+  #     - ./:/app
+  #     - ._docker_bundler/:/usr/local/bundle
+  #   command: ["./run.sh", "bundle", "install"]
+  db:
+    image: dev.engajobs:2
     volumes:
-      - ./:/app
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/app
       - ._docker_bundler/:/usr/local/bundle
-    command: ["./run.sh", "bundle", "install"]
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
