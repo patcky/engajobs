@@ -1,0 +1,27 @@
+@use '../config';
+@use '../utilities';
+
+.c-button {
+
+  @extend .text-base;
+  appearance: none;
+  cursor: pointer;
+  background-color: $white;
+  color: $black;
+  text-decoration: none;
+  padding-inline: 10px;
+  padding-block: 5px;
+  border: 1px solid $gray-mid;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 16ch;
+
+  &:hover {
+    background-color: $gray;
+  }
+
+  &--primary {
+    background-color: $orange;
+    border: $orange-shade;
+  }
+}
