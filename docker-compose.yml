@@ -1,28 +1,55 @@
 version: "3.8"
-services: 
-  # dev:
-  #   image: dev.engajobs:1 # allows image to be reused, as well as rebuilt if we change version number
-  #   build:
-  #     context: .
-  #   ports:
-  #     - "8000:8000" # http
-  #   volumes:
-  #     - ./:/app
-  #     - ._docker_bundler/:/usr/local/bundle
-  #   command: ["./run.sh", "bundle", "install"]
-  db:
-    image: dev.engajobs:2
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: password
-  web:
-    build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - .:/app
-      - ._docker_bundler/:/usr/local/bundle
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
+services:
+  postgres:
+      image: postgres:12.1
+      environment:
+        POSTGRES_USER: engajobs
+        POSTGRES_PASSWORD: password
+      ports: 
+        - '5432:5432'
+      volumes:
+        - engajobs-app-postgres:/var/lib/postgresql/data
+  redis:
+      image: redis:5.0.7
+      ports:
+        - '6379:6379'
+      volumes:
+        - engajobs-app-redis:/var/lib/redis/data
+  engajobs-app:
+      build:
+        context: .
+        args:
+          USER_ID: "${USER_ID:-1000}"
+          GROUP_ID: "${GROUP_ID:-1000}"
+      volumes:
+        - ./engajobs-app:/app
+      links:
+        - postgres
+        - redis
+      ports:
+        - '8010:8010'
+      env_file:
+        - .env
+  sidekiq:
+      build:
+        context: .
+        args:
+          USER_ID: "${USER_ID:-1000}"
+          GROUP_ID: "${GROUP_ID:-1000}"
+      command: bundle exec sidekiq 
+      links:
+        - postgres
+        - redis
+      env_file:
+        - .env
+  nginx:
+      build:
+        context: .
+        dockerfile: ./Dockerfile.nginx
+      links:
+        - engajobs-app
+      ports:
+        - '8020:8020'
+volumes:
+  engajobs-app-postgres:
+  engajobs-app-redis:
