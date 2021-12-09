@@ -4,7 +4,7 @@
 .c-card {
   display: flex;
   flex-direction: row;
-  gap: config.spacing(4);
+  gap: 4px;
 
   &__image {
     height: 115px;
@@ -13,8 +13,7 @@
   }
 
   &__content {
-    @extend .stack;
-    gap: config.spacing(4);
+    gap: 4px;
     flex: 1;
   }
 

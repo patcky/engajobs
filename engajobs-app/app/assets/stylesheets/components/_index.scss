@@ -2,14 +2,10 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-
-// Old project stuff.
-@use "alert";
-@use "brands-highlight";
-@use "button";
-@use "card";
-@use "home-section";
-@use "testimonial";
-@use 'wave-separator';
-@use "navbar";
-@use "modal";
+@import "brands-highlight";
+@import "button";
+@import "card";
+@import "home-section";
+@import "testimonial";
+@import 'wave-separator';
+@import "modal";

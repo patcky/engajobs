@@ -3,7 +3,6 @@
 
 .c-button {
 
-  @extend .text-base;
   appearance: none;
   cursor: pointer;
   background-color: $white;
@@ -22,6 +21,6 @@
 
   &--primary {
     background-color: $orange;
-    border: $orange-shade;
+    border: $main-orange;
   }
 }

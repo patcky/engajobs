@@ -2,8 +2,7 @@
 @use '../utilities';
 
 .c-testimonial {
-  @extend .stack;
-  gap: config.spacing(4);
+  gap: 4px;
 
   &__media {
     width: 300px;
@@ -12,10 +11,8 @@
 
   &__content {
     h3 {
-      @extend .text-base;
     }
     p {
-      @extend .text-sm;
     }
   }
 }
