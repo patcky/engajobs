@@ -16,15 +16,15 @@ WARNING: before anything, you need to make sure you are on an Ubuntu or MacOS ma
 
 First, make sure you have Docker installed and running on your machine. If you are using Windows, make sure you have WSL installed and running and that you have checked the option in Docker Desktop `Configurations > General > use the WSL 2 based engine`.
 
-Then, open your terminal and access the project folder (the main folder, above the `engajobs-app` folder). 
+Then, open your terminal and access the project folder. 
 
 In the terminal, run:
 
 ```
 docker volume create --name drkiq-postgres
 docker volume create --name drkiq-redis
-docker-compose run engajobs-app rake db:reset
-docker-compose run engajobs-app rake db:migrate
+docker-compose run engajobs rake db:reset
+docker-compose run engajobs rake db:migrate
 docker-compose up
 ```
 Note that you will only need to run all of the above if it's your first time running the container. After that, you will only need to use `docker-compose up` to start or `docker-compose down` to stop the container.
@@ -40,10 +40,10 @@ Run the following command to generate a Pages controller with a home action:
 
 ```
 # OSX/Windows:
-docker-­compose run engajobs-app rails g controller Pages home
+docker-­compose run engajobs rails g controller Pages home
 
 # Other operational systems:
-docker-­compose run --­­user "$(id -­u):$(id -­g)" engajobs-app rails g controller Pages home
+docker-­compose run --­­user "$(id -­u):$(id -­g)" engajobs rails g controller Pages home
 ```
 
 This type of command is how you’ll run future Rails commands. If you wanted to generate a model or run a migration, you would run them in the same way.
@@ -52,10 +52,10 @@ This type of command is how you’ll run future Rails commands. If you wanted to
 
 ```
 # OSX/Windows:
-docker-­compose run engajobs-app rails g job counter
+docker-­compose run engajobs rails g job counter
 
 # Other operational systems:
-docker-­compose run --­­user "$(id -­u):$(id -­g)" engajobs-app rails g job counter
+docker-­compose run --­­user "$(id -­u):$(id -­g)" engajobs rails g job counter
 ```
 
 ### Compile Assets
@@ -63,12 +63,12 @@ With everything ready, we should precompile the CSS and JavaScript code and use 
 
 ```
 # OSX/Windows:
-docker-compose run engajobs-app rails webpacker:install
-docker-compose run engajobs-app rails assets:precompile
+docker-compose run engajobs rails webpacker:install
+docker-compose run engajobs rails assets:precompile
 
 # Other operational systems:
-docker-compose run --user "$(id -u):$(id -g)" engajobs-app rails webpacker:install
-docker-compose run --user "$(id -u):$(id -g)" engajobs-app rails assets:precompile
+docker-compose run --user "$(id -u):$(id -g)" engajobs rails webpacker:install
+docker-compose run --user "$(id -u):$(id -g)" engajobs rails assets:precompile
 ```
 
 ### Adding Some Tests
@@ -102,7 +102,7 @@ end
 To run the tests:
 
 ```
-docker-compose run engajobs-app rails test
+docker-compose run engajobs rails test
 ```
 
 ## Running the project locally without Docker

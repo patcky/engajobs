@@ -9,7 +9,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.lis
 RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
 
 WORKDIR $INSTALL_PATH
-COPY engajobs-app/ .
+COPY engajobs/ .
 RUN rm -rf node_modules vendor
 RUN gem install rails bundler
 RUN bundle install
