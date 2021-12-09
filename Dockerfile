@@ -1,4 +1,4 @@
-FROM ruby:2.7.2 AS engajobs-app-development
+FROM ruby:2.7.2 AS engajobs-development
 
 ARG USER_ID
 ARG GROUP_ID
@@ -14,7 +14,7 @@ ENV INSTALL_PATH /app
 RUN mkdir -p $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
-COPY engajobs-app/ .
+COPY / .
 RUN rm -rf node_modules vendor
 RUN gem install rails bundler
 RUN bundle install
