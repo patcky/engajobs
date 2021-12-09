@@ -1,0 +1,13 @@
+current directory: /usr/local/bundle/gems/json-2.6.1/ext/json
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.0.0 -r ./siteconf20211125-7-9ct0rk.rb extconf.rb
+creating Makefile
+
+current directory: /usr/local/bundle/gems/json-2.6.1/ext/json
+make DESTDIR\= clean
+
+current directory: /usr/local/bundle/gems/json-2.6.1/ext/json
+make DESTDIR\=
+make: Nothing to be done for 'all'.
+
+current directory: /usr/local/bundle/gems/json-2.6.1/ext/json
+make DESTDIR\= install

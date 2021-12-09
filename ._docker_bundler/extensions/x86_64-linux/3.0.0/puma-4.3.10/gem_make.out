@@ -1,0 +1,36 @@
+current directory: /usr/local/bundle/gems/puma-4.3.10/ext/puma_http11
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.0.0 -r ./siteconf20211125-7-wr200s.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+checking for DTLS_method() in openssl/ssl.h... yes
+checking for TLS_server_method() in openssl/ssl.h... yes
+checking for SSL_CTX_set_min_proto_version in openssl/ssl.h... yes
+creating Makefile
+
+current directory: /usr/local/bundle/gems/puma-4.3.10/ext/puma_http11
+make DESTDIR\= clean
+
+current directory: /usr/local/bundle/gems/puma-4.3.10/ext/puma_http11
+make DESTDIR\=
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+mini_ssl.c: In function ‘engine_init_server’:
+mini_ssl.c:145:7: warning: unused variable ‘min’ [-Wunused-variable]
+  145 |   int min, ssl_options;
+      |       ^~~
+mini_ssl.c: In function ‘raise_error’:
+mini_ssl.c:299:6: warning: function might be candidate for attribute ‘noreturn’ [-Wsuggest-attribute=noreturn]
+  299 | void raise_error(SSL* ssl, int result) {
+      |      ^~~~~~~~~~~
+mini_ssl.c: At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+compiling puma_http11.c
+linking shared-object puma/puma_http11.so
+
+current directory: /usr/local/bundle/gems/puma-4.3.10/ext/puma_http11
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20211125-7-zc00eu/puma

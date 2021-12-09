@@ -1,0 +1,5 @@
+.git
+.dockerignore
+.env
+engajobs-app/node_modules/
+engajobs-app/vendor/bundle/

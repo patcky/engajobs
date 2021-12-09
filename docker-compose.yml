@@ -1,0 +1,55 @@
+version: "3.8"
+services:
+  postgres:
+      image: postgres:12.1
+      environment:
+        POSTGRES_USER: engajobs
+        POSTGRES_PASSWORD: password
+      ports: 
+        - '5432:5432'
+      volumes:
+        - engajobs-app-postgres:/var/lib/postgresql/data
+  redis:
+      image: redis:5.0.7
+      ports:
+        - '6379:6379'
+      volumes:
+        - engajobs-app-redis:/var/lib/redis/data
+  engajobs-app:
+      build:
+        context: .
+        args:
+          USER_ID: "${USER_ID:-1000}"
+          GROUP_ID: "${GROUP_ID:-1000}"
+      volumes:
+        - ./engajobs-app:/app
+      links:
+        - postgres
+        - redis
+      ports:
+        - '8010:8010'
+      env_file:
+        - .env
+  sidekiq:
+      build:
+        context: .
+        args:
+          USER_ID: "${USER_ID:-1000}"
+          GROUP_ID: "${GROUP_ID:-1000}"
+      command: bundle exec sidekiq 
+      links:
+        - postgres
+        - redis
+      env_file:
+        - .env
+  nginx:
+      build:
+        context: .
+        dockerfile: ./Dockerfile.nginx
+      links:
+        - engajobs-app
+      ports:
+        - '8020:8020'
+volumes:
+  engajobs-app-postgres:
+  engajobs-app-redis:

@@ -1,0 +1,16 @@
+current directory: /usr/local/bundle/gems/unf_ext-0.0.7.7/ext/unf_ext
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.0.0 -r ./siteconf20211125-7-ap8q51.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /usr/local/bundle/gems/unf_ext-0.0.7.7/ext/unf_ext
+make DESTDIR\= clean
+
+current directory: /usr/local/bundle/gems/unf_ext-0.0.7.7/ext/unf_ext
+make DESTDIR\=
+compiling unf.cc
+linking shared-object unf_ext.so
+
+current directory: /usr/local/bundle/gems/unf_ext-0.0.7.7/ext/unf_ext
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20211125-7-e76zqr
