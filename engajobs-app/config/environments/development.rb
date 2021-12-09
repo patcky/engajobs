@@ -63,4 +63,9 @@ Rails.application.configure do
 
   # Config for Docker
   config.hosts << "engajobs"
+
+  # Fix for an error 'NoMethodError: undefined method 'silence' for #<Logger:...>'
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger    = ActiveSupport::TaggedLogging.new(logger)
 end
