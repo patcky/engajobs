@@ -41,13 +41,12 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
-gem 'unicorn', '~> 5.5.5'
-gem 'sidekiq', '~> 6.0.4'
-gem 'redis-rails', '~> 5.0.2'
-
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'unicorn', '~> 5.5.5'
+  gem 'sidekiq', '~> 6.0.4'
+  gem 'redis-rails', '~> 5.0.2'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
