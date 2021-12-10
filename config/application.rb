@@ -29,6 +29,7 @@ module Engajobs
     # If you've never dealt with background workers before, this is the Rails
     # way to use them through Active Job. We just need to tell it to use Sidekiq.
     config.active_job.queue_adapter = :sidekiq
+    config.active_record.cache_versioning = false
 
 
     # Settings in config/environments/* take precedence over those specified here.
